@@ -36,7 +36,7 @@
     }
 
     body {
-      margin: auto;
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -106,6 +106,9 @@
         margin: auto;
       }
     }
+    body{
+      transition: background-color 0.5s, color 0.5s;
+    }
   </style>
 </head>
 <body>
@@ -119,7 +122,7 @@
       <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
       <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
-      <a href="aksiyon" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
           class="fa fa-th"></i>FOR MORE</a>
       <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
         onclick="toggleDarkMode()">CHANGE
@@ -146,30 +149,36 @@
     </div>
   </div>
 
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="hakkında.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
-        onclick="toggleFunction()">ABOUT</a>
-    <a href="aksiyon.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
-        onclick="toggleFunction()">FOR MORE</a>
-    <button class="w3-bar-item w3-button" style="margin-top: auto; border-radius: 30px;"
-        onclick="toggleDarkMode()">CHANGE MODE</button>
-    <script>
-        function toggleDarkMode() {
-            var element = document.body;
-            isDarkMode = !isDarkMode;
-
-            if (isDarkMode) {
-                element.style.backgroundColor = "#202121";
-                element.style.color = "white";
-
-            } else {
-                element.style.backgroundColor = "white";
-                element.style.color = "black";
-
-            }
-        }
-    </script>
-</div>
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+      <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+      <a href="aksiyon.html" class="w3-bar-item w3-button" onclick="toggleFunction()">FOR MORE</a>
+      <button class="w3-bar-item w3-button" onclick="toggleDarkMode()">CHANGE MODE</button>
+    </div>
+    
+  <script>
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.classList.contains("w3-show")) {
+        x.classList.remove("w3-show");
+      } else {
+        x.classList.add("w3-show");
+      }
+    }
+  
+    function toggleDarkMode() {
+      var element = document.body;
+      isDarkMode = !isDarkMode;
+  
+      if (isDarkMode) {
+        element.style.backgroundColor = "#202121";
+        element.style.color = "white";
+      } else {
+        element.style.backgroundColor = "white";
+        element.style.color = "black";
+      }
+    }
+  </script>
 
 
   <!-- The App Section -->

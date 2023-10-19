@@ -319,6 +319,9 @@
       background-color: black;
       color: white;
     }
+    body {
+      transition: background-color 0.5s, color 0.5s;
+    }
   </style>
 </head>
 
@@ -335,28 +338,29 @@
           class="fa fa-user"></i> ABOUT</a>
       <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
           class="fa fa-th"></i>FOR MORE</a>
-      <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
-        onclick="toggleDarkMode()">CHANGE MODE</button>
       <button onclick="document.getElementById('id01').style.display='inline-block'" style="margin-top:auto;"
         class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
-      <script>
-        var isDarkMode = false;
+        <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
+        onclick="toggleDarkMode()">CHANGE MODE</button>
 
-        function toggleDarkMode() {
-          var element = document.body;
-          isDarkMode = !isDarkMode;
+<script>
+  var isDarkMode = false;
 
-          if (isDarkMode) {
-            element.style.backgroundColor = "#202121";
-            element.style.color = "white";
+  function toggleDarkMode() {
+    var element = document.body;
+    isDarkMode = !isDarkMode;
 
-          } else {
-            element.style.backgroundColor = "white";
-            element.style.color = "black";
+    if (isDarkMode) {
+      element.style.backgroundColor = "#202121";
+      element.style.color = "white";
 
-          }
-        }
-      </script>
+    } else {
+      element.style.backgroundColor = "white";
+      element.style.color = "black";
+
+    }
+  }
+</script>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
         <i class="fa fa-search"></i>
       </a>
