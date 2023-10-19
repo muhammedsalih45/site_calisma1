@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Deneme Sitesi</title>
+  <style>
+.open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 230px;
+    }
+
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #b3b3b3;
+      z-index: 9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      padding: 64px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both
+    }
+
+    .column-66 {
+      float: left;
+      width: 66.66666%;
+      padding: 20px;
+    }
+
+    .column-33 {
+      float: left;
+      width: 33.33333%;
+      padding: 20px;
+    }
+
+    .large-font {
+      font-size: 48px;
+    }
+
+    .xlarge-font {
+      font-size: 64px
+    }
+
+    .button {
+      padding: 15px 25px;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 6px #484848;
+    }
+
+    button:hover {
+      background-color: gray;
+    }
+
+    button:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(2px);
+    }
+
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 1000px) {
+
+      .column-66,
+      .column-33 {
+        width: 100%;
+        text-align: center;
+      }
+
+      img {
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+          class="fa fa-user"></i> ABOUT</a>
+      <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+          class="fa fa-th"></i>GAMES</a>
+      <a href="oyunlar.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+          class="fa fa-th"></i>FOR MORE</a>
+      <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
+        onclick="toggleDarkMode()">CHANGE
+        MODE</button>
+      <script>
+        var isDarkMode = false;
+
+        function toggleDarkMode() {
+          var element = document.body;
+          isDarkMode = !isDarkMode;
+
+          if (isDarkMode) {
+            element.style.backgroundColor = "#202121";
+            element.style.color = "white";
+          } else {
+            element.style.backgroundColor = "black";
+            element.style.color = "black";
+          }
+        }
+      </script>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+        <i class="fa fa-search"></i>
+      </a>
+    </div>
+  </div>
+
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+      <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+      <a href="oyunlar.html" class="w3-bar-item w3-button" onclick="toggleFunction()">FOR MORE</a>
+      <button class="w3-bar-item w3-button" onclick="toggleDarkMode()">CHANGE MODE</button>
+    </div>
+    
+  <script>
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.classList.contains("w3-show")) {
+        x.classList.remove("w3-show");
+      } else {
+        x.classList.add("w3-show");
+      }
+    }
+  
+    function toggleDarkMode() {
+      var element = document.body;
+      isDarkMode = !isDarkMode;
+  
+      if (isDarkMode) {
+        element.style.backgroundColor = "#202121";
+        element.style.color = "white";
+      } else {
+        element.style.backgroundColor = "white";
+        element.style.color = "black";
+      }
+    }
+  </script>
+
+
+  <!-- The App Section -->
+  <div class="container" style="background-color: #b9b9b9;">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font"><b>VİSİON</b></h1>
+        <h1 class="large-font" style="color:mediumseagreen;"><b>Here İs Our Vision</b></h1>
+        <p><span style="font-size:36px">We Share With You</span> "We open the doors of a world full of games to you. The
+          game is more than just a means of entertainment, it is also a journey of disruption that allows you to
+          stimulate your imagination. Each game is a combination of stepping into a new world, following the footsteps
+          of different characters and facing challenges. But we "We are here to make this experience even more special.
+          Games are tools for shared connection, creative thinking, and fun. We open the doors of this world of gaming
+          for you and work passionately to make this experience more meaningful and enjoyable."</p>
+        <button class="button" style="border-radius: 30px; background-color: #cecece;">Reed More</button>
+      </div>
+      <div class="column-33">
+        <img src="resim/crysis.jpg" width="600" height="600" style="border-radius: 40px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Clarity Section -->
+  <div class="container" style="background-color:#7e7e7e">
+    <div class="row">
+      <div class="column-33">
+        <img src="resim/dead space.jpg" alt="App" width="600" height="600" style="border-radius:40px;">
+      </div>
+      <div class="column-66">
+        <h1 class="xlarge-font"><b>Mission</b></h1>
+        <h1 class="large-font" style="color:mediumseagreen;"><b>So What İs Our Mission?</b></h1>
+        <p><span style="font-size:24px">"Our mission is to create a paradise for gamers of all types exploring the world
+            of gaming. This paradise aims to provide gamers with a wide choice, bringing together both the latest games
+            and unforgettable classics. Games are the melting pot for gamers with many different interests and play
+            styles. We strive to satisfy gamers of all kinds and deliver the best games available to meet their demands.
+        </p>
+        <button class="button" style="border-radius: 30px; background-color: #cecece;">Reed More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- The App Section -->
+  <div class="container" style="background-color: #525252;">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font"><b>Goals</b></h1>
+        <h1 class="large-font" style="color:MediumSeaGreen;"><b>Our Goal</b></h1>
+        <p><span style="font-size:36px">Dreams And İdeals</span>"It is our main goal to make the gaming world more
+          accessible, fun and enjoyable for everyone. Accessibility means that games are easily accessible not only for
+          experienced players, but also for beginners and people of all age groups. Therefore, we ensure that our games
+          provide a user-friendly experience We place special emphasis on providing user-friendly interfaces,
+          explanatory tutorials and support resources to make games more accessible.</p>
+        <button class="button" style="border-radius: 30px; background-color: #cecece;">Reed More</button>
+      </div>
+      <div class="column-33">
+        <img src="resim/calisto.jpg" width="600" height="600" style="border-radius: 40px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Clarity Section -->
+  <div class="container" style="background-color:#3c3c3c">
+    <div class="row">
+      <div class="column-33">
+        <img src="resim/elden ring.jpg" alt="App" width="600" height="600" style="border-radius:40px;">
+      </div>
+      <div class="column-66">
+        <h1 class="xlarge-font"><b>Worth</b></h1>
+        <h1 class="large-font" style="color:mediumseagreen;"><b>Our Values</b></h1>
+        <p><span style="font-size:24px">equally to everyone</span> Fair Game: Cheating and injustice are things that
+          have no place in the game world. We work to ensure that every player has a fair competitive environment and
+          equal opportunities.
+          Community Focus: Games serve as a way to connect with friends, meet new people, and build communities. We aim
+          to promote solidarity and friendship among players.
+          Supporting Creativity: We are committed to supporting creativity by providing game developers with the
+          opportunity to showcase their games. We are constantly filling the game world with innovation and discovery.
+        </p>
+        <button class="button" style="border-radius: 30px; background-color:#cecece;">Read
+            More</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off" style="background-color: #181818;">
+    <a href="hakkında.html" class="w3-button w3-light-grey button" style="border-radius:30px;"><i
+        class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section" style="color: white;">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p style="color: white;">Powered by <b>Darkness Gaming</b></p>
+  </footer>
+</body>
+
+</html>

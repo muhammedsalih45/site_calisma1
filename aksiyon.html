@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <title>Aksiyon Sayfası</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 230px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #b3b3b3;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: rgb(133, 133, 133);
+        }
+
+        /* Full-width textarea */
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+
+        /* When the textarea gets focus, do something */
+        .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #008453;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: rgb(179, 0, 0);
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+
+        .button {
+            padding: 15px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 6px #999;
+        }
+
+        .button:hover {
+            background-color: #3e8e41
+        }
+
+        .button:active {
+            box-shadow: 0 5px #666;
+            transform: translateY(2px);
+        }
+
+        .box {
+            transition: 1s;
+        }
+
+        .box:hover {
+            transform: scale(1.03);
+            z-index: 1;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ffffff;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        .button1 {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 30%;
+            border-radius: 20%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%;
+            /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes animatezoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Lato", sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* Create a Parallax Effect */
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            background-attachment: fixed !important;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* First image (Logo. Full height) */
+        .bgimg-1 {
+            background-image: url(resim/elden\ ring.jpg);
+            min-height: 100% !important;
+        }
+
+        /* Second image (Portfolio) */
+        .bgimg-2 {
+            background-image: url(resim/ghost\ of.png);
+            min-height: 400px !important;
+        }
+
+        /* Third image (Contact) */
+        .bgimg-3 {
+            background-image: url(resim/elden\ ring.jpg);
+            margin-top: 40px;
+            min-height: 200px !important;
+        }
+
+        .w3-wide {
+            letter-spacing: 10px;
+        }
+
+        .w3-hover-opacity {
+            cursor: pointer;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1600px) {
+
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3 {
+                background-attachment: scroll;
+                min-height: 400px;
+            }
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .game-container .w3-col {
+            width: calc(25% - 16px);
+            /* 25% genişlik, 16px boşluk bırakma */
+            margin: 8px;
+        }
+
+        .game-container img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .text1 {
+            text-align: center;
+            font-family: 'Alfa Slab One';
+            color: darkred;
+            width: 100% !important;
+            font-size: 30px;
+            margin: auto;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 290px;
+            margin: 9px;
+            text-align: center;
+            font-family: arial;
+            float: left;
+        }
+
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+
+        .button2 {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 10px 25px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .button2:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
+            <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+                    class="fa fa-user"></i> ABOUT</a>
+            <a href="oyunlar.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+                    class="fa fa-th"></i>FOR MORE</a>
+            <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
+                onclick="toggleDarkMode()">CHANGE
+                MODE</button>
+            <button onclick="document.getElementById('id01').style.display='inline-block'" style="margin-top:auto;"
+                class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
+            <script>
+                var isDarkMode = false;
+
+                function toggleDarkMode() {
+                    var element = document.body;
+                    isDarkMode = !isDarkMode;
+
+                    if (isDarkMode) {
+                        element.style.backgroundColor = "#202121";
+                        element.style.color = "white";
+
+                    } else {
+                        element.style.backgroundColor = "white";
+                        element.style.color = "black";
+
+                    }
+                }
+            </script>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+                <i class="fa fa-search"></i>
+            </a>
+            <!--  -->
+            <div id="id01" class="modal">
+                <form class="modal-content animate">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+                        <img src="" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button class="button1" type="submit">Login</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#ffffff">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                            class="cancelbtn button1">Cancel</button>
+                        <span class="psw">Forgot <a href="#"
+                                style="color: blue; text-decoration: none;">password?</a></span>
+                    </div>
+                </form>
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="hakkında.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
+                onclick="toggleFunction()">ABOUT</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" style="border-radius: 30px;"
+                onclick="toggleFunction()">GAMES</a>
+            <a href="oyunlar.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
+                onclick="toggleFunction()">FOR MORE</a>
+            <button class="w3-bar-item w3-button" style="margin-top: auto; border-radius: 30px;"
+                onclick="toggleDarkMode()">CHANGE MODE</button>
+            <script>
+                function toggleDarkMode() {
+                    var element = document.body;
+                    isDarkMode = !isDarkMode;
+
+                    if (isDarkMode) {
+                        element.style.backgroundColor = "#202121";
+                        element.style.color = "white";
+
+                    } else {
+                        element.style.backgroundColor = "white";
+                        element.style.color = "black";
+
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <a href="index.html" style="text-decoration: none;"><span
+                    class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">WELCOME<span
+                        class="w3-hide-small"> TO MY </span> WEB SİTE</span></a>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">100+</span><br>
+            Action Games
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">90+</span><br>
+            Adventure Games
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">150+</span><br>
+            Faer Games
+        </div>
+        <div class="w3-quarter w3-section">
+            <span class="w3-xlarge">95+</span><br>
+            Race Games
+        </div>
+    </div>
+
+    <!--Second Parallax Image with Portfolio Text-->
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">SOME GAMES</span>
+        </div>
+    </div>
+
+    <!--games-->
+    <div class="container game-container">
+        <div class="card">
+            <img src="resim/doom ethernal.jpg" alt="Avatar">
+            <h1>Doom Ethernal</h1>
+            <p class="title">STORY</p>
+            <p>Doom 3'ten (2004) bu yana serideki ilk büyük yapıttır. Oyuncular, Mars'taki enerji madenciliği tesislerinde Union Aerospace Corporation tarafından serbest bırakılan Cehennemden gelen şeytani güçlerle savaşırken, Doom Slayer olarak bilinen isimsiz bir uzay denizcisinin rolünü üstlenirler.</p>
+            <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+            <p><button class="button2">Detaylar</button></p>
+        </div>
+        <div class="card">
+            <img src="resim/calisto.jpg" alt="Avatar">
+            <h1>Calisto Protocol</h1>
+            <p class="title">STORY</p>
+            <p>Yakın bir zamanda Callisto'nun üstünde bulunan, UJC'nin yönetiminde olan Black Iron Hapishanesi ile Europa arasında etiketsiz uçucu bir madde taşıma sevkiyatı yaparlar ve bu görev emekli olmalarını sağlayacak kadar kazançlıdır.</p>
+            <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+            <p><button class="button2">Detaylar</button></p>
+        </div>
+        <div class="card">
+            <img src="resim/call of duty.jpg" alt="Avatar">
+            <h1>Call Of Duyt</h1>
+            <p class="title">STORY</p>
+            <p>Oyunun hikâyesi kurgusal bir yakın gelecekte geçmektedir. Orta Doğu'da bulunan ve ismi belirtilmeyen bir ülkede, radikal bir liderin ülke başkanını öldürerek askerî darbe içerisinde olması ile birlikte; Rusya'daki aşırı milliyetçi yapılanmalarla ortaya çıkan iç savaş olmak üzere iki ayrı konu ele alınmaktadır</p>
+            <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+            <p><button class="button2">Detaylar</button></p>
+        </div>
+    </div>
+    <!--  -->
+    <div class="container game-container">
+        <div class="card">
+            <img src="resim/ghost of.png">
+            <h1>Ghost Of Tsushima</h1>
+            <p class="title">STORY</p>
+            <p>13'üncü yüzyıl sonlarına dayanıyor. Ana oyunda, Japonya'nın Tsushima Adası'ndayız ve Moğol işgali kapımıza dayanmış durumda. Moğol lider Hotun Han, tüm kuvvetleriyle saldırırken, anakaradan uzakta bir başına olan Tsushima'nın Şogun'a haber iletecek zamanı ise yok.</p>
+            <div style="margin: 24px 0; vertical-align: bottom;">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+            <p><button class="button2" style="vertical-align: bottom;">Detaylar</button></p>
+        </div>
+
+        <div class="card">
+            <img src="resim/rdr2.jpg">
+            <h1>Red Dead Redemption 2</h1>
+            <p class="title">STORY</p>
+            <p>Oyunda geçen zaman çetelerin ve silahlı soyguncuların yaşadığı Vahşi Batı döneminin son zamanlarıdır. Ana karakter Arthur Morgan üçüncü ve birinci şahıs bakış açısıyla kontrol edilebilmektedir. Oyun tek oyunculu ve çok oyunculu modları içermektedir.</p>
+            <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+            <p><button class="button2">Detaylar</button></p>
+        </div>
+
+        <div class="card">
+            <img src="resim/resident evil.jpg">
+            <h1>Resident Evil Village</h1>
+            <p class="title">STORY</p>
+            <p> Chris Redfield, önceki Resident Evil oyunlarının kahramanı, bir anda ortaya çıkar ve huzurlu yaşamlarını bozarak harap olmuş Ethan Winters'ın kendisini Avrupa'da gizemli bir köyde bulmasına yol açar ve Ethan'ı yeni bir kabusun içine sürükler.</p>
+            <div style="margin: 24px 0;">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+            <p><button class="button2">Detaylar</button></p>
+        </div>
+    </div>
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+            <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
+                    class="fa fa-remove"></i></span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption" class="w3-opacity w3-large"></p>
+            </div>
+        </div>
+
+        <!-- Third Parallax Image with Portfolio Text -->
+        <div class="bgimg-3 w3-display-container w3-opacity-min">
+            <div class="w3-display-middle">
+                <span class="w3-xxlarge w3-text-white w3-wide">EXPERİENCE İT WİTH US</span>
+            </div>
+        </div>
+
+        <!-- Container-->
+        <div class="w3-content w3-container w3-padding-64" id="contact">
+            <h3 class="w3-center">WHERE I WORK</h3>
+            <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+            <div class="w3-row w3-padding-32 w3-section">
+                <div class="w3-col m4 w3-container">
+                    <img src="resim/alien.jpg" style="border-radius: 50px;"
+                        class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500"
+                        height="333">
+                </div>
+                <div class="w3-col m8 w3-panel">
+                    <div class="w3-large w3-margin-bottom">
+                        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Manisa,
+                        TR<br>
+                        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 90+ 551
+                        501
+                        15 51<br>
+                        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+                        mail@gmail.com<br>
+                    </div>
+                    <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+                    <form>
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                            <div class="w3-half">
+                                <input style="border-radius: 30px;" class="w3-input w3-border" type="text"
+                                    placeholder="Name  Surname" required name="Name">
+                            </div>
+                            <div class="w3-half">
+                                <input style="border-radius: 30px;" class="w3-input w3-border" type="text"
+                                    placeholder="Email" required name="Email">
+                            </div>
+                        </div>
+                        <input style="border-radius: 30px;" class="w3-input w3-border" type="text" placeholder="Message"
+                            required name="Message">
+                        <button class="w3-button w3-black w3-right w3-section button" type="submit">
+                            <i class="fa fa-paper-plane"></i> SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation example" style="margin-right: 20px;">
+            <ul class="pagination justify-content-end">
+                <li class="page-item ">
+                    <a href="yarış.html" class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="aksiyon.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="macera.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="korku.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="yarış.html">4</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="macera.html">Next</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+            <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+                top</a>
+            <div class="w3-xlarge w3-section">
+                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <i class="fa fa-instagram w3-hover-opacity"></i>
+                <i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                <i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>
+            </div>
+            <p>Powered by <b>Darkness Gaming</b></p>
+        </footer>
+
+        <script>
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+
+            // Change style of navbar on scroll
+            window.onscroll = function () { myFunction() };
+            function myFunction() {
+                var navbar = document.getElementById("myNavbar");
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+                } else {
+                    navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+                }
+            }
+
+            // Used to toggle the menu on small screens when clicking on the menu button
+            function toggleFunction() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+
+        <!-- Chat-->
+        <button class="open-button" style="border-radius: 30px;" onclick="openForm()">Chat</button>
+
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <h1 style="color:white;">Chat</h1>
+
+                <label for="msg" style="color: white;"><b>Message</b></label>
+                <textarea placeholder="Type message.." name="msg" required></textarea>
+
+                <button type="submit" class="btn" style="border-radius: 30px;">Send</button>
+                <button type="button" class="btn cancel" style="border-radius: 30px;"
+                    onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+
+</body>
+
+</html>
