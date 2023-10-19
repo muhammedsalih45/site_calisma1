@@ -348,16 +348,6 @@
             font-size: 30px;
             margin: auto;
         }
-
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 290px;
-            margin: 9px;
-            text-align: center;
-            font-family: arial;
-            float: left;
-        }
-
         .title {
             color: grey;
             font-size: 18px;
@@ -379,6 +369,88 @@
         .button2:hover {
             background-color: #555;
         }
+
+        .card {
+            width: 350px;
+            height: 200px;
+            background-color: #f2f2f2;
+            position: relative;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.2);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            color: #fff;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card-content p {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .img-text{
+            color: rgb(0, 0, 0);
+        }
+
+        .card:hover .card-content p {
+            animation: slideIn 1s forwards;
+        }
+
+        .button2 {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 5px 10px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button2:hover {
+            background-color: #555;
+        }
+
+
     </style>
 </head>
 
@@ -532,91 +604,92 @@
     </div>
 
     <!--games-->
-    <div class="container game-container">
+    <div class="container-fluid game-container">
         <div class="card">
-            <img src="resim/doom ethernal.jpg" alt="Avatar">
-            <h1>Doom Ethernal</h1>
-            <p class="title">STORY</p>
-            <p>Doom 3'ten (2004) bu yana serideki ilk büyük yapıttır. Oyuncular, Mars'taki enerji madenciliği tesislerinde Union Aerospace Corporation tarafından serbest bırakılan Cehennemden gelen şeytani güçlerle savaşırken, Doom Slayer olarak bilinen isimsiz bir uzay denizcisinin rolünü üstlenirler.</p>
-            <div style="margin: 24px 0;">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+            <img src="resim/crysis.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Crysis</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
             </div>
-            <p><button class="button2">Detaylar</button></p>
         </div>
+
         <div class="card">
-            <img src="resim/calisto.jpg" alt="Avatar">
-            <h1>Calisto Protocol</h1>
-            <p class="title">STORY</p>
-            <p>Yakın bir zamanda Callisto'nun üstünde bulunan, UJC'nin yönetiminde olan Black Iron Hapishanesi ile Europa arasında etiketsiz uçucu bir madde taşıma sevkiyatı yaparlar ve bu görev emekli olmalarını sağlayacak kadar kazançlıdır.</p>
-            <div style="margin: 24px 0;">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+            <img src="resim/dead space.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Dead Space:Remake</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
             </div>
-            <p><button class="button2">Detaylar</button></p>
         </div>
+
         <div class="card">
-            <img src="resim/call of duty.jpg" alt="Avatar">
-            <h1>Call Of Duyt</h1>
-            <p class="title">STORY</p>
-            <p>Oyunun hikâyesi kurgusal bir yakın gelecekte geçmektedir. Orta Doğu'da bulunan ve ismi belirtilmeyen bir ülkede, radikal bir liderin ülke başkanını öldürerek askerî darbe içerisinde olması ile birlikte; Rusya'daki aşırı milliyetçi yapılanmalarla ortaya çıkan iç savaş olmak üzere iki ayrı konu ele alınmaktadır</p>
-            <div style="margin: 24px 0;">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+            <img src="resim/days gone.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Days Gone</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
             </div>
-            <p><button class="button2">Detaylar</button></p>
         </div>
     </div>
     <!--  -->
-    <div class="container game-container">
+    <div class="container-fluid game-container">
         <div class="card">
-            <img src="resim/ghost of.png">
-            <h1>Ghost Of Tsushima</h1>
-            <p class="title">STORY</p>
-            <p>13'üncü yüzyıl sonlarına dayanıyor. Ana oyunda, Japonya'nın Tsushima Adası'ndayız ve Moğol işgali kapımıza dayanmış durumda. Moğol lider Hotun Han, tüm kuvvetleriyle saldırırken, anakaradan uzakta bir başına olan Tsushima'nın Şogun'a haber iletecek zamanı ise yok.</p>
-            <div style="margin: 24px 0; vertical-align: bottom;">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+            <img src="resim/doom ethernal.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Doom Ethernal</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
             </div>
-            <p><button class="button2" style="vertical-align: bottom;">Detaylar</button></p>
         </div>
 
         <div class="card">
-            <img src="resim/rdr2.jpg">
-            <h1>Red Dead Redemption 2</h1>
-            <p class="title">STORY</p>
-            <p>Oyunda geçen zaman çetelerin ve silahlı soyguncuların yaşadığı Vahşi Batı döneminin son zamanlarıdır. Ana karakter Arthur Morgan üçüncü ve birinci şahıs bakış açısıyla kontrol edilebilmektedir. Oyun tek oyunculu ve çok oyunculu modları içermektedir.</p>
-            <div style="margin: 24px 0;">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+            <img src="resim/calisto.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Calisto Protocol</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
             </div>
-            <p><button class="button2">Detaylar</button></p>
         </div>
 
         <div class="card">
-            <img src="resim/resident evil.jpg">
-            <h1>Resident Evil Village</h1>
-            <p class="title">STORY</p>
-            <p> Chris Redfield, önceki Resident Evil oyunlarının kahramanı, bir anda ortaya çıkar ve huzurlu yaşamlarını bozarak harap olmuş Ethan Winters'ın kendisini Avrupa'da gizemli bir köyde bulmasına yol açar ve Ethan'ı yeni bir kabusun içine sürükler.</p>
-            <div style="margin: 24px 0;">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube"></i></a>
+            <img src="resim/call of duty.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Call Of Duty MW</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
             </div>
-            <p><button class="button2">Detaylar</button></p>
         </div>
-    </div>
+     </div>
+     <!--  -->
+     <div class="container-fluid game-container">
+        <div class="card">
+            <img src="resim/elden ring.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Elden Ring</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="resim/ghost of.png" alt="Nature">
+            <div class="card-content">
+                <h3>Ghost Of Tsushima</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="resim/witcher.jpg" alt="Nature">
+            <div class="card-content">
+                <h3>Witcher 3 Wild Hunt</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır.</p>
+                <button class="button2">Detaylar</button>
+            </div>
+        </div>
+     </div>
 
         <!-- Modal for full size images on click-->
         <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">

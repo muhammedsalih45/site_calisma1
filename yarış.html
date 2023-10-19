@@ -348,6 +348,87 @@
             font-size: 30px;
             margin: auto;
         }
+
+        .card {
+            width: 350px;
+            height: 200px;
+            background-color: #f2f2f2;
+            position: relative;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover img {
+            transform: scale(1.2);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            color: #fff;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card-content p {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .img-text{
+            color: rgb(0, 0, 0);
+        }
+
+        .card:hover .card-content p {
+            animation: slideIn 1s forwards;
+        }
+
+        .button2 {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 5px 10px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button2:hover {
+            background-color: #555;
+        }
+
     </style>
 </head>
 
@@ -504,93 +585,100 @@
 
     <!-- Container (Portfolio Section) -->
     <!--games-->
-    <div class="container" style="width: 100%;">
+    <div class="container-fluid">
         <div class="game-container">
-            <div class="card" style="width: 18rem; ">
-                <img src="resim/need for speed.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Calisto Protocol</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card">
+                <img src="resim/need for speed.jpg" alt="Nature">
+                <div class="card-content">
+                <h3>Need For Speed:Heat</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                <button class="button2">Detaylar</button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem; margin: auto;">
-                <img src="resim/wrc.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Alien:İsolation</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card">
+                <img src="resim/wrc.jpg" alt="Nature">
+                <div class="card-content">
+                <h3>WRC 9</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                <button class="button2">Detaylar</button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem; margin: auto;">
-                <img src="resim/little.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Little Nightmares</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem; margin: auto;">
-                <img src="resim/resident evil.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Resident Evil Village</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card">
+                <img src="resim/rdr2.jpg" alt="Nature">
+                <div class="card-content">
+                    <h3>Red Dead Redemption 2</h3>
+                    <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                    <button class="button2">Detaylar</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="game-container">
-            <div class="card" style="width: 18rem;">
-                <img src="resim/days gone.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Days Gone</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card">
+                <img src="resim/doom ethernal.jpg" alt="Nature">
+                <div class="card-content">
+                <h3>Doom Ethernal</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                <button class="button2">Detaylar</button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem; margin-top: 20px; margin: auto;">
-                <img src="resim/need for speed.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Dead Space:Remake</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make upasdasdasdsadsadsadasdasd the bulk card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card">
+                <img src="resim/call of duty.jpg" alt="Nature">
+                <div class="card-content">
+                <h3>Call Of Duty MW</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                <button class="button2">Detaylar</button>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem; margin-top: 20px; margin: auto;">
-                <img src="resim/watch dogs.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Watch Dogs</h5>
-                    <p class="card-text">Some quick example text to build on the card  title and make up the bulk of the title and make the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem; margin-top: 20px; margin: auto;">
-                <img src="resim/persona-5-persona-series-phantom-thieves-wallpaper-preview.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Persona 5</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the title and make up the bulk of 
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card">
+                <img src="resim/spiderman.jpg" alt="Nature">
+                <div class="card-content">
+                    <h3>Incredible Spiderman</h3>
+                    <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                    <button class="button2">Detaylar</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!--  -->
+    <div class="container-fluid">
+        <div class="game-container">
+            <div class="card">
+                <img src="resim/detroit.jpg" alt="Nature">
+                <div class="card-content">
+                <h3>Detroit Became Human</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                <button class="button2">Detaylar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="resim/elden ring.jpg" alt="Nature">
+                <div class="card-content">
+                <h3>Elden Ring</h3>
+                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                <button class="button2">Detaylar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="resim/persona-5-persona-series-phantom-thieves-wallpaper-preview.jpg" alt="Nature">
+                <div class="card-content">
+                    <h3>Persona 5</h3>
+                    <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                    <button class="button2">Detaylar</button>
+                </div>
+            </div>
+        </div>
     </div>
+    
 
     <!-- Modal for full size images on click-->
     <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
