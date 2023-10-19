@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Deneme Sitesi</title>
-  <style>
-.open-button {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+    .w3-wide {
+      letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+      cursor: pointer;
+    }
+
+        .open-button {
       background-color: #555;
       color: white;
       padding: 16px 20px;
@@ -106,24 +114,24 @@
         margin: auto;
       }
     }
-  </style>
+    </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <div class="w3-top">
+ <!-- Navbar -->
+ <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
       <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
+      <a href="#home" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
       <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
-      <a href="aksiyon" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
           class="fa fa-th"></i>FOR MORE</a>
       <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
-        onclick="toggleDarkMode()">CHANGE
-        MODE</button>
+        onclick="toggleDarkMode()">CHANGE MODE</button>
+      <button onclick="document.getElementById('id01').style.display='inline-block'" style="margin-top:auto;"
+        class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
       <script>
         var isDarkMode = false;
 
@@ -134,51 +142,19 @@
           if (isDarkMode) {
             element.style.backgroundColor = "#202121";
             element.style.color = "white";
+
           } else {
-            element.style.backgroundColor = "black";
+            element.style.backgroundColor = "white";
             element.style.color = "black";
+
           }
         }
       </script>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
         <i class="fa fa-search"></i>
       </a>
-    </div>
-  </div>
 
-    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
-      <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
-      <a href="hakkında.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-      <a href="oyunlar.html" class="w3-bar-item w3-button" onclick="toggleFunction()">FOR MORE</a>
-      <button class="w3-bar-item w3-button" onclick="toggleDarkMode()">CHANGE MODE</button>
-    </div>
-    
-  <script>
-    function toggleFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.classList.contains("w3-show")) {
-        x.classList.remove("w3-show");
-      } else {
-        x.classList.add("w3-show");
-      }
-    }
-  
-    function toggleDarkMode() {
-      var element = document.body;
-      isDarkMode = !isDarkMode;
-  
-      if (isDarkMode) {
-        element.style.backgroundColor = "#202121";
-        element.style.color = "white";
-      } else {
-        element.style.backgroundColor = "white";
-        element.style.color = "black";
-      }
-    }
-  </script>
-
-
-  <!-- The App Section -->
+      <!-- The App Section -->
   <div class="container" style="background-color: #b9b9b9;">
     <div class="row">
       <div class="column-66">
@@ -259,22 +235,5 @@
     </div>
   </div>
 
-
-
-  <!-- Footer -->
-  <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off" style="background-color: #181818;">
-    <a href="hakkında.html" class="w3-button w3-light-grey button" style="border-radius:30px;"><i
-        class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-    <div class="w3-xlarge w3-section" style="color: white;">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    <p style="color: white;">Powered by <b>Darkness Gaming</b></p>
-  </footer>
 </body>
-
 </html>
