@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Detaylar sayfası</title>
+  <style>
+.open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 230px;
+    }
+
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #b3b3b3;
+      z-index: 9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      padding: 64px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both
+    }
+
+    .column-66 {
+      float: left;
+      width: 66.66666%;
+      padding: 20px;
+    }
+
+    .column-33 {
+      float: left;
+      width: 33.33333%;
+      padding: 20px;
+    }
+
+    .large-font {
+      font-size: 48px;
+    }
+
+    .xlarge-font {
+      font-size: 64px
+    }
+
+    .button {
+      padding: 15px 25px;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 6px #484848;
+    }
+
+    button:hover {
+      background-color: gray;
+    }
+
+    button:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(2px);
+    }
+
+    img {
+      display: block;
+      height: auto;
+      min-height: 100%;
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 1000px) {
+
+      .column-66,
+      .column-33 {
+        width: 100%;
+        text-align: center;
+      }
+
+      img {
+        margin: auto;
+      }
+    }
+    body{
+      transition: background-color 0.5s, color 0.5s;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        height: 120vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(128, 128, 128, 0.5);
+    }
+    .column-66 {
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+          class="fa fa-user"></i> ABOUT</a>
+      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+          class="fa fa-th"></i>FOR MORE</a>
+      <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
+        onclick="toggleDarkMode()">CHANGE
+        MODE</button>
+      <script>
+        var isDarkMode = false;
+
+        function toggleDarkMode() {
+          var element = document.body;
+          isDarkMode = !isDarkMode;
+
+          if (isDarkMode) {
+            element.style.backgroundColor = "#202121";
+            element.style.color = "white";
+          } else {
+            element.style.backgroundColor = "black";
+            element.style.color = "black";
+          }
+        }
+      </script>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+        <i class="fa fa-search"></i>
+      </a>
+    </div>
+  </div>
+
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+      <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+      <a href="aksiyon.html" class="w3-bar-item w3-button" onclick="toggleFunction()">FOR MORE</a>
+      <button class="w3-bar-item w3-button" onclick="toggleDarkMode()">CHANGE MODE</button>
+    </div>
+    
+  <script>
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.classList.contains("w3-show")) {
+        x.classList.remove("w3-show");
+      } else {
+        x.classList.add("w3-show");
+      }
+    }
+  
+    function toggleDarkMode() {
+      var element = document.body;
+      isDarkMode = !isDarkMode;
+  
+      if (isDarkMode) {
+        element.style.backgroundColor = "#202121";
+        element.style.color = "white";
+      } else {
+        element.style.backgroundColor = "white";
+        element.style.color = "black";
+      }
+    }
+  </script>
+
+
+  <!-- The App Section -->
+  <div id="crysis" class="container" style="background-image: url('resim/crysis.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>CRYSIS</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+  <!-- Clarity Section -->
+  <div id="doom_ethernal" class="container" style="background-image: url('resim/doom\ ethernal.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>DOOM ETHERNAL</b></h1>
+            <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>Doom Eternal'ın hikayesi, Doom (2016) oyununun olaylarına devam eder. Oyuncular, Doom Slayer olarak bilinen kahramanı kontrol eder ve cehennem ordularıyla savaşarak insanlığı kurtarmaya çalışır. Oyunda, Dünya, cehennem orduları tarafından işgal edilmiş ve cehennemsel güçler tarafından istila edilmiştir.
+             Oyuncular, cehennem ordularının gezegeni ele geçirme ve insanlığı yok etme çabalarına karşı koymak için çeşitli gezegenler ve boyutlar arasında seyahat eder. Doom Slayer, çeşitli silahlar ve yetenekler kullanarak güçlü düşmanlarla savaşır ve cehennem ordularının liderleriyle karşı karşıya gelir. Oyuncular, hikaye ilerledikçe Doom Slayer'ın geçmişi ve misyonu hakkında daha fazla bilgi edinirler.
+             Doom Eternal, aksiyon dolu oynanışı, hızlı tempolu hareket mekaniği ve çarpıcı görselleriyle dikkat çeker. Oyun, oyunculara geniş bir silah ve yetenek yelpazesi sunar ve taktiksel stratejiler kullanarak zorlu düşmanları alt etmelerini gerektirir. Doom Eternal, oynanışın yanı sıra çarpıcı bir atmosfer ve metal müzikleriyle de ünlüdür.</p>
+        </div>
+    </div>
+</div>
+
+  <!-- The App Section -->
+  <div id="elden_ring" class="container" style="background-image: url(resim/elden\ ring.jpg); background-attachment: fixed; background-repeat: no-repeat; background-size: cover;">
+    <div class="row">
+      <div class="column-66" style=" background-color: rgba(255, 255, 255, 0.5); width:100%;">
+        <h1 class="xlarge-font" style="color:mediumseagreen;"><b>ELDEN RİNG</b></h1>
+        <p><span style="font-size:36px">İşte Elden Ring'in Hikayesi</span>Oyunun hikayesi ve dünyası, fantastik bir kurgu evreninde geçer. "Elden Ring", bozulmuş ve parçalanmış bir dünyada geçen bir epik macerayı anlatır. Oyuncular, bir 
+        Elden Ring olarak bilinen güçlü bir nesneyi yeniden bir araya getirmek için çeşitli krallıkları dolaşır ve farklı bölgeleri keşfeder. Bu arayış sırasında oyuncular, çeşitli düşmanlarla karşılaşacak ve zorlu mücadelelerle karşı karşıya kalacaktır.
+        Oyunun hikayesi ve dünyası, gizemli varlıklar, büyülü güçler ve çeşitli krallıkların çatışmalarıyla doludur. Oyuncular, Elden Ring'i yeniden bir araya getirmek için çeşitli görevleri yerine getirecek ve bu esnada dünyanın geçmişi ve sırları hakkında daha fazla bilgi edineceklerdir.
+        "Elden Ring", zorlu düşmanlar, karmaşık bir hikaye ve çarpıcı görselleriyle tanınır. Oyun, oyunculara geniş bir dünya ve keşfedilecek derin bir evren sunar. Ayrıca, oyunun zorlu oynanışı ve derin karakter özelleştirme özellikleriyle de dikkat çeker. "Elden Ring" oyunseverler arasında büyük bir beklenti ve heyecan yaratmış ve hem Miyazaki'nin hem de Martin'in yaratıcılığının birleşimiyle merakla beklenen bir yapıt haline gelmiştir.
+    </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clarity Section -->
+  <div id="dead_space" class="container" style="background-image: url('resim/dead\ space.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>DEAD SPACE</b></h1>
+            <p><span style="font-size:36px">İşte Dead Space'in Hikayesi</span>Oyunun hikayesi, bir mühendis olan Isaac Clarke'ın maceralarını takip eder. İlk oyunda, Isaac ve ekibi, uzay gemisi USG Ishimura'yı incelerken gizemli bir sinyal alırlar. Gittikleri gemide, ölümcül bir uzaylı parazit türü olan Necromorphs'la karşılaşırlar. Bu parazitler, insan vücutlarına saldırarak onları değiştirir ve canavarlara dönüştürür. Isaac, hem
+            bu korkunç yaratıklarla savaşırken hem de Ishimura gemisinde meydana gelen gizemli olayları çözmeye çalışır.
+            Seri, Isaac'in hayatta kalmak için çaresizce çabaladığı ve aynı zamanda kendi geçmişiyle yüzleştiği karmaşık bir hikaye sunar. Oyunlar boyunca Isaac, tehlikeli Necromorphs'la savaşmak, kaynakları toplamak ve hayatta kalmak için çeşitli mekanik aletler kullanır. Seri, atmosferi, oynanışı ve derinlemesine hikayesiyle öne çıkar. "Dead Space", klostrofobik 
+            atmosferi, gerilim dolu anları ve korkutucu düşmanlarıyla bilinen bir korku oyunu serisidir. Seri, bilim kurgu korku türündeki oyunları sevenler için eşsiz bir deneyim sunmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="calisto_protocol" class="container" style="background-image: url('resim/calisto.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>CALISTO PROTOCOL</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="ghost_of" class="container" style="background-image: url('resim/ghost\ of.png');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>GHOST OF TSUSHIMA</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="days_gone" class="container" style="background-image: url('resim/days\ gone.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>DAYS GONE</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="call_of_duty" class="container" style="background-image: url('resim/call\ of\ duty.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>CALL OF DUTY MW</b></h1>
+            <p><span style="font-size:36px">İşte Call Of Duty'nin Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="rdr2" class="container" style="background-image: url('resim/rdr2.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>RED DEAD REDEMPTİON 2</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="detroit" class="container" style="background-image: url('resim/detroit.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>DETROİT BECAME HUMAN</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="ratchet" class="container" style="background-image: url('resim/ratchet.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>RATCHET AND CLANK</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="persona" class="container" style="background-image: url('resim/persona-5-persona-series-phantom-thieves-wallpaper-preview.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>PERSONA 5</b></h1>
+            <p><span style="font-size:36px">İşte Crysis'in Hikayesi</span> İlk Crysis oyunu, 2020 yılında Kuzey Kore'ye
+                yapılan bir saldırı sonucunda yaşanan olayları konu alır. Bir grup Amerikan özel kuvvetleri askeri,
+                Kuzey Kore tarafından ele geçirilen bir adada gizli bir görev gerçekleştirir. Ancak, beklenmedik bir
+                şekilde bu adada gizemli bir uzay gemisi keşfederler. Daha sonra adada, bu uzay gemisinin varlığı ve
+                etkisi nedeniyle yaşam formlarının ortaya çıkmasıyla bir dizi olay meydana gelir. Oyun, oyuncuların olağanüstü güçlere sahip 
+                nanosuit teknolojisini kullanmalarına ve bu zorlu durumlarla başa çıkmalarına olanak tanır. Hikaye, 
+                karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
+        </div>
+    </div>
+</div>
+
+<div id="witcher" class="container" style="background-image: url('resim/witcher.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>WİTCHER 3 WİLD HUNT</b></h1>
+            <p><span style="font-size:36px">İşte Witcher 3'ün Hikayesi</span>Oyunun hikayesi, Witcher olarak bilinen bir canavar avcısı olan Geralt of Rivia'nın etrafında döner. Geralt, kayıp bir sevgilisi olan Yennefer'ı bulmak ve tehlikeli bir grup avcı olan Wild Hunt'ı durdurmak için tehlikeli bir yolculuğa çıkar. 
+                Oyuncular, Geralt'ın birbirinden farklı görevleri tamamlamasına ve geniş dünyada çeşitli karakterlerle etkileşime girmesine olanak tanıyan geniş bir hikaye ve yan görevler ağıyla karşılaşırlar.
+                Oyunun hikayesi, politik entrikalar, büyülü yaratıklar, savaşlar ve çeşitli taraflar arasındaki çatışmaları içeren zengin bir dünyada geçer. Oyuncular, çeşitli kararlar alarak hikayenin gidişatını etkileyebilir ve farklı sonuçlar elde edebilir. 
+                Karakterler arasındaki ilişkiler, dünya üzerindeki etkileşimler ve hikaye ilerledikçe alınan kararlar, oyunun derinliğini ve etkileyiciliğini artırır.
+                "The Witcher 3: Wild Hunt", açık dünya yapısı, etkileyici hikayesi, zengin yan görevleri ve derin karakter gelişimiyle övgü toplamış ve oyun dünyasında geniş bir hayran kitlesi kazanmıştır. Oyun, büyülü bir dünyada epik bir macera deneyimi sunar.</p>
+        </div>
+    </div>
+</div>
+
+<div id="dogs" class="container" style="background-image: url('resim/watch\ dogs.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>WATCH DOGS</b></h1>
+            <p><span style="font-size:36px">İşte Watch Dogs'un Hikayesi</span>Oyunun hikayesi, bir bilgisayar korsanı olan Aiden Pearce'in etrafında döner. Aiden, Chicago'nun merkezinde, hükümetin ve büyük şirketlerin kontrolündeki gelişmiş bir bilgi toplumunda yaşamaktadır. Ancak, bir olay sonucunda sevdikleri tehlikeye 
+            girdiğinde, Aiden intikam almak ve adalet sağlamak için kendi kişisel savaşını başlatır. Oyuncular, Aiden'ın yeteneklerini kullanarak şehirdeki çeşitli sistemlere sızar, insanları izler ve çeşitli görevleri yerine getirir.
+            "Watch Dogs" oyununda oyuncular, bir bilgisayar korsanı olarak şehirdeki herhangi bir kişiyi, aracı veya elektronik cihazı hack'leme yeteneğine sahiptir. Oyun, oyunculara şehrin sokaklarında dolaşma, görevleri tamamlama, yan görevleri yerine 
+            getirme ve çeşitli görevlerle etkileşimde bulunma imkanı sunar. Oyuncular, hikaye boyunca çeşitli karakterlerle etkileşime girer ve şehirdeki suç örgütleri, hükümet ajanları ve diğer tehlikelerle mücadele eder
+            "Watch Dogs" serisi, modern toplumun teknolojik yönlerini, gizlilik konularını ve kişisel özgürlükleri ele alan temalarıyla dikkat çeker. Oyun, oyunculara gelişmiş hackleme yetenekleri, heyecan verici aksiyon ve zengin bir açık dünya deneyimi sunar.
+            Seri, oyun dünyasında geniş bir hayran kitlesi tarafından ilgiyle takip edilmektedir.        </div>
+    </div>
+</div>
+
+<div id="spiderman" class="container" style="background-image: url('resim/spiderman.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>MARVEL SPİDERMAN</b></h1>
+            <p><span style="font-size:36px">İşte Marvel spiderman'in Hikayesi</span>Spider-Man, oyun boyunca çeşitli suç örgütleriyle, süper kötülerle ve diğer tehditlerle karşı karşıya gelir. Oyuncular, gelişmiş aksiyon mekanikleri ve özelleştirilebilir yetenekler kullanarak Spider-Man'in saldırılarını ve hareketlerini geliştirebilirler.
+            Oyunda ayrıca, Peter Parker'ın kişisel hayatına ve ilişkilerine de odaklanılır
+            Spider-Man, oyun boyunca çeşitli suç örgütleriyle, süper kötülerle ve diğer tehditlerle karşı karşıya gelir. Oyuncular, gelişmiş aksiyon mekanikleri ve özelleştirilebilir yetenekler kullanarak Spider-Man'in saldırılarını ve hareketlerini geliştirebilirler. 
+            Oyunda ayrıca, Peter Parker'ın kişisel hayatına ve ilişkilerine de odaklanılır
+            Oyun, Spider-Man'in çeşitli kostümlerini, yeteneklerini ve ikonik özelliklerini içerir. Ayrıca, New York City'nin çeşitli semtlerini keşfetme imkanı sunar. Oyunun geniş açık dünya yapısı, oyunculara serbest dolaşma imkanı ve yan görevlerle dolu zengin bir deneyim sunar.
+            Marvel's Spider-Man, heyecan verici aksiyon sahneleri, etkileyici görselleri ve derinlemesine hikayesiyle oyun dünyasında büyük bir başarı elde etmiştir. Oyun, Spider-Man hayranları ve genel oyunseverler tarafından beğenilmiş ve takdir edilmiştir.</div>
+    </div>
+</div>
+
+<div id="second_son" class="container" style="background-image: url('resim/second\ son.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>İNFAMOUS SECOND SON</b></h1>
+            <p><span style="font-size:36px">İşte İnfeamus Second Son'ın Hikayesi</span>Oyunun hikayesi, Seattle, Washington'da geçer. Delsin Rowe, graffiti sanatçısı bir gençtir ve oyunun başında bir olay sonucu süper güçlere sahip olduğunu keşfeder. Oyun boyunca, Delsin, kendisine ve şehre yönelik tehditlere karşı mücadele ederken 
+            farklı güçler kazanır ve kullanır. Oyuncular, Delsin'in kararlarını etkileyerek kahraman veya anti-kahraman olma yolunda ilerleyebilirler.
+            Oyunda, Delsin'in kardeşi Reggie ve diğer karakterler de önemli roller üstlenir. Delsin'in Seattle'da güçlerini kullanarak çeşitli görevleri yerine getirmesi, çeşitli suçlularla ve düşman gruplarla savaşması ve şehri kurtarmak için çaba göstermesi gerekmektedir.
+            Oyuncular, Delsin'in güçlerini geliştirerek ve çeşitli yetenekleri kullanarak oyun dünyasında ilerlerler.
+            inFAMOUS: Second Son, etkileyici grafikleri, akıcı oynanışı ve geniş açık dünya ortamıyla dikkat çeker. Oyun, oyunculara geniş bir şehri keşfetme, görevleri tamamlama ve farklı güçleri deneyimleme imkanı sunar. Karakter gelişimi ve hikaye ilerledikçe alınan kararlar, oyunun ilerleyen kısımlarını etkiler ve farklı sonuçlara yol açabilir.
+            Oyun, inFAMOUS serisi hayranları ve aksiyon-macera oyunlarını sevenler için eğlenceli bir deneyim sunar.</div>
+    </div>
+</div>
+
+<div id="little" class="container" style="background-image: url('resim/little.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>LİTTLE NİGHTMARES</b></h1>
+            <p><span style="font-size:36px">İşte Litlle Nightmares'ın Hikayesi</span>Oyunun hikayesi, Seattle, Washington'da geçer. Delsin Rowe, graffiti sanatçısı bir gençtir ve oyunun başında bir olay sonucu süper güçlere sahip olduğunu keşfeder. Oyun boyunca, Delsin, kendisine ve şehre yönelik tehditlere karşı mücadele ederken 
+            farklı güçler kazanır ve kullanır. Oyuncular, Delsin'in kararlarını etkileyerek kahraman veya anti-kahraman olma yolunda ilerleyebilirler.
+            Oyunda, Delsin'in kardeşi Reggie ve diğer karakterler de önemli roller üstlenir. Delsin'in Seattle'da güçlerini kullanarak çeşitli görevleri yerine getirmesi, çeşitli suçlularla ve düşman gruplarla savaşması ve şehri kurtarmak için çaba göstermesi gerekmektedir.
+            Oyuncular, Delsin'in güçlerini geliştirerek ve çeşitli yetenekleri kullanarak oyun dünyasında ilerlerler.
+            inFAMOUS: Second Son, etkileyici grafikleri, akıcı oynanışı ve geniş açık dünya ortamıyla dikkat çeker. Oyun, oyunculara geniş bir şehri keşfetme, görevleri tamamlama ve farklı güçleri deneyimleme imkanı sunar. Karakter gelişimi ve hikaye ilerledikçe alınan kararlar, oyunun ilerleyen kısımlarını etkiler ve farklı sonuçlara yol açabilir.
+            Oyun, inFAMOUS serisi hayranları ve aksiyon-macera oyunlarını sevenler için eğlenceli bir deneyim sunar.</div>
+    </div>
+</div>
+
+<div id="alien" class="container" style="background-image: url('resim/alien.jpg');">
+    <div class="row">
+        <div class="column-66">
+            <h1 class="xlarge-font" style="color:mediumseagreen;"><b>LİTTLE NİGHTMARES</b></h1>
+            <p><span style="font-size:36px">İşte Litlle Nightmares'ın Hikayesi</span>Oyunun hikayesi, Seattle, Washington'da geçer. Delsin Rowe, graffiti sanatçısı bir gençtir ve oyunun başında bir olay sonucu süper güçlere sahip olduğunu keşfeder. Oyun boyunca, Delsin, kendisine ve şehre yönelik tehditlere karşı mücadele ederken 
+            farklı güçler kazanır ve kullanır. Oyuncular, Delsin'in kararlarını etkileyerek kahraman veya anti-kahraman olma yolunda ilerleyebilirler.
+            Oyunda, Delsin'in kardeşi Reggie ve diğer karakterler de önemli roller üstlenir. Delsin'in Seattle'da güçlerini kullanarak çeşitli görevleri yerine getirmesi, çeşitli suçlularla ve düşman gruplarla savaşması ve şehri kurtarmak için çaba göstermesi gerekmektedir.
+            Oyuncular, Delsin'in güçlerini geliştirerek ve çeşitli yetenekleri kullanarak oyun dünyasında ilerlerler.
+            inFAMOUS: Second Son, etkileyici grafikleri, akıcı oynanışı ve geniş açık dünya ortamıyla dikkat çeker. Oyun, oyunculara geniş bir şehri keşfetme, görevleri tamamlama ve farklı güçleri deneyimleme imkanı sunar. Karakter gelişimi ve hikaye ilerledikçe alınan kararlar, oyunun ilerleyen kısımlarını etkiler ve farklı sonuçlara yol açabilir.
+            Oyun, inFAMOUS serisi hayranları ve aksiyon-macera oyunlarını sevenler için eğlenceli bir deneyim sunar.</div>
+    </div>
+</div>
+
+
+
+  <!-- Footer -->
+  <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off" style="background-color: #181818;">
+    <a href="hakkında.html" class="w3-button w3-light-grey button" style="border-radius:30px;"><i
+        class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section" style="color: white;">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p style="color: white;">Powered by <b>Darkness Gaming</b></p>
+  </footer>
+</body>
+
+</html>
