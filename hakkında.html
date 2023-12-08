@@ -8,197 +8,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .container {
-      padding: 64px;
-    }
-
-    .row:after {
-      content: "";
-      display: table;
-      clear: both
-    }
-
-    .column-66 {
-      float: left;
-      width: 66.66666%;
-      padding: 20px;
-    }
-
-    .column-33 {
-      float: left;
-      width: 33.33333%;
-      padding: 20px;
-    }
-
-    .large-font {
-      font-size: 48px;
-    }
-
-    .xlarge-font {
-      font-size: 64px
-    }
-
-    .button {
-      padding: 15px 25px;
-      cursor: pointer;
-      outline: none;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 6px #484848;
-    }
-
-    button:hover {
-      background-color: gray;
-    }
-
-    button:active {
-      box-shadow: 0 5px #666;
-      transform: translateY(2px);
-    }
-
-    img {
-      display: block;
-      height: auto;
-      max-width: 100%;
-    }
-
-    @media screen and (max-width: 1000px) {
-
-      .column-66,
-      .column-33 {
-        width: 100%;
-        text-align: center;
-      }
-
-      img {
-        margin: auto;
-      }
-    }
-    body{
-      transition: background-color 0.5s, color 0.5s;
-    }
-    .open-button {
-      background-color: #555;
-      color: white;
-      padding: 16px 20px;
-      border: none;
-      cursor: pointer;
-      opacity: 0.8;
-      position: fixed;
-      bottom: 23px;
-      right: 28px;
-      width: 230px;
-    }
-
-    /* The popup chat - hidden by default */
-    .chat-popup {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      right: 15px;
-      border: 3px solid #b3b3b3;
-      z-index: 9;
-    }
-
-    .button {
-      padding: 15px;
-      cursor: pointer;
-      outline: none;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 6px #999;
-    }
-
-    .button:hover {
-      background-color: #3e8e41
-    }
-
-    .button:active {
-      box-shadow: 0 5px #666;
-      transform: translateY(2px);
-    }
-
-    .box {
-      transition: 1s;
-    }
-
-    .box:hover {
-      transform: scale(1.03);
-      z-index: 1;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Lato", sans-serif;
-    }
-
-    /* Create a Parallax Effect */
-    .bgimg-1,
-    .bgimg-2,
-    .bgimg-3 {
-      background-attachment: fixed !important;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    /* First image (Logo. Full height) */
-    .bgimg-1 {
-      background-image: url(resim/elden\ ring.jpg);
-      min-height: 100% !important;
-    }
-
-    /* Second image (Portfolio) */
-    .bgimg-2 {
-      background-image: url(resim/ghost\ of.png);
-      min-height: 400px !important;
-    }
-
-    /* Third image (Contact) */
-    .bgimg-3 {
-      background-image: url(resim/doom\ ethernal.jpg);
-      min-height: 400px !important;
-    }
-
-    .w3-wide {
-      letter-spacing: 10px;
-    }
-
-    .w3-hover-opacity {
-      cursor: pointer;
-    }
-
-    /* Turn off parallax scrolling for tablets and phones */
-    @media only screen and (max-device-width: 1600px) {
-
-      .bgimg-1,
-      .bgimg-2,
-      .bgimg-3 {
-        background-attachment: scroll;
-        min-height: 400px;
-      }
-    }
-
-    .dark-mode {
-      background-color: black;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="hakkında.css">
 </head>
 
 <body>
@@ -286,7 +96,6 @@
           of different characters and facing challenges. But we "We are here to make this experience even more special.
           Games are tools for shared connection, creative thinking, and fun. We open the doors of this world of gaming
           for you and work passionately to make this experience more meaningful and enjoyable."</p>
-        <button class="button" style="border-radius: 30px; background-color: #cecece;">Reed More</button>
       </div>
       <div class="column-33">
         <img src="resim/crysis.jpg" width="600" height="600" style="border-radius: 40px;">
@@ -309,7 +118,6 @@
           and unforgettable classics. Games are the melting pot for gamers with many different interests and play
           styles. We strive to satisfy gamers of all kinds and deliver the best games available to meet their demands.
       </p>
-      <button class="button" style="border-radius: 30px; background-color: #cecece;">Reed More</button>
     </div>
   </div>
 </div>
@@ -325,7 +133,6 @@
           experienced players, but also for beginners and people of all age groups. Therefore, we ensure that our games
           provide a user-friendly experience We place special emphasis on providing user-friendly interfaces,
           explanatory tutorials and support resources to make games more accessible.</p>
-        <button class="button" style="border-radius: 30px; background-color: #cecece;">Reed More</button>
       </div>
       <div class="column-33">
         <img src="resim/calisto.jpg" width="600" height="600" style="border-radius: 40px;">
@@ -350,8 +157,6 @@
             Supporting Creativity: We are committed to supporting creativity by providing game developers with the
             opportunity to showcase their games. We are constantly filling the game world with innovation and discovery.
           </p>
-          <button class="button" style="border-radius: 30px; background-color:#cecece;">Read
-              More</button>
         </div>
       </div>
     </div>

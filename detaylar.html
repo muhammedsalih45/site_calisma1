@@ -8,368 +8,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    .heading {
-      font-size: 25px;
-    }
-    .checked {
-      color: orange;
-    }
-
-    /* Three column layout */
-    .side {
-      float: left;
-      width: 15%;
-      margin-top: 10px;
-    }
-
-    .middle {
-      margin-top: 10px;
-      float: left;
-      width: 70%;
-    }
-
-    /* Place text to the right */
-    .right {
-      text-align: right;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* The bar container */
-    .bar-container {
-      width: 100%;
-      background-color: #f1f1f1;
-      text-align: center;
-      color: white;
-    }
-
-    /* Individual bars */
-    .bar-5 {
-      width: 60%;
-      height: 18px;
-      background-color: #04AA6D;
-    }
-
-    .bar-4 {
-      width: 30%;
-      height: 18px;
-      background-color: #2196F3;
-    }
-
-    .bar-3 {
-      width: 10%;
-      height: 18px;
-      background-color: #00bcd4;
-    }
-
-    .bar-2 {
-      width: 4%;
-      height: 18px;
-      background-color: #ff9800;
-    }
-
-    .bar-1 {
-      width: 15%;
-      height: 18px;
-      background-color: #f44336;
-    }
-
-    /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-    @media (max-width: 400px) {
-
-      .side,
-      .middle {
-        width: 100%;
-      }
-
-      .right {
-        display: none;
-      }
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .container {
-      padding: 64px;
-    }
-
-    .row:after {
-      content: "";
-      display: table;
-      clear: both
-    }
-
-    .column-66 {
-      float: left;
-      width: 66.66666%;
-      padding: 20px;
-    }
-
-    .column-33 {
-      float: left;
-      width: 33.33333%;
-      padding: 20px;
-    }
-
-    .large-font {
-      font-size: 48px;
-    }
-
-    .xlarge-font {
-      font-size: 64px
-    }
-
-    .button {
-      padding: 15px 25px;
-      cursor: pointer;
-      outline: none;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 6px #484848;
-    }
-
-    button:hover {
-      background-color: gray !important;
-    }
-
-    button:active {
-      box-shadow: 0 5px #666;
-      transform: translateY(2px);
-    }
-
-    img {
-      display: block;
-      height: auto;
-      min-height: 100%;
-      max-width: 100%;
-    }
-
-    @media screen and (max-width: 1000px) {
-
-      .column-66,
-      .column-33 {
-        width: 100%;
-        text-align: center;
-      }
-
-      img {
-        margin: auto;
-      }
-    }
-
-    body {
-      transition: background-color 0.5s, color 0.5s;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      height: 120vh;
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: rgba(128, 128, 128, 0.5);
-    }
-
-    .column-66 {
-      background-color: rgba(255, 255, 255, 0.5);
-      width: 100%;
-    }
-
-    .open-button {
-      background-color: #555;
-      color: white;
-      padding: 16px 20px;
-      border: none;
-      cursor: pointer;
-      opacity: 0.8;
-      position: fixed;
-      bottom: 23px;
-      right: 28px;
-      width: 230px;
-    }
-
-    /* The popup chat - hidden by default */
-    .chat-popup {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      right: 15px;
-      border: 3px solid #b3b3b3;
-      z-index: 9;
-    }
-
-    .button {
-      padding: 15px;
-      cursor: pointer;
-      outline: none;
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 6px #999;
-    }
-
-    .button:hover {
-      background-color: #3e8e41
-    }
-
-    .button:active {
-      box-shadow: 0 5px #666;
-      transform: translateY(2px);
-    }
-
-    .box {
-      transition: 1s;
-    }
-
-    .box:hover {
-      transform: scale(1.03);
-      z-index: 1;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    /* Full-width input fields */
-    input[type=text],
-    input[type=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ffffff;
-      box-sizing: border-box;
-    }
-
-    /* Set a style for all buttons */
-    .button1 {
-      background-color: #04AA6D;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      opacity: 0.8;
-    }
-
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-      width: auto;
-      padding: 10px 18px;
-      background-color: #000000;
-    }
-
-
-
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-      span.psw {
-        display: block;
-        float: none;
-      }
-
-      .cancelbtn {
-        width: 100%;
-      }
-    }
-
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Lato", sans-serif;
-    }
-
-    /* Create a Parallax Effect */
-    .bgimg-1,
-    .bgimg-2,
-    .bgimg-3 {
-      background-attachment: fixed !important;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    /* First image (Logo. Full height) */
-    .bgimg-1 {
-      background-image: url(resim/elden\ ring.jpg);
-      min-height: 100% !important;
-    }
-
-    /* Second image (Portfolio) */
-    .bgimg-2 {
-      background-image: url(resim/ghost\ of.png);
-      min-height: 400px !important;
-    }
-
-    /* Third image (Contact) */
-    .bgimg-3 {
-      background-image: url(resim/doom\ ethernal.jpg);
-      min-height: 400px !important;
-    }
-
-    .w3-wide {
-      letter-spacing: 10px;
-    }
-
-    .w3-hover-opacity {
-      cursor: pointer;
-    }
-
-    /* Turn off parallax scrolling for tablets and phones */
-    @media only screen and (max-device-width: 1600px) {
-
-      .bgimg-1,
-      .bgimg-2,
-      .bgimg-3 {
-        background-attachment: scroll;
-        min-height: 400px;
-      }
-    }
-
-    .dark-mode {
-      background-color: black;
-      color: white;
-    }
-
-    body {
-      transition: background-color 0.5s, color 0.5s;
-    }
-
-    .img-animation {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .img-animation:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  <link rel="stylesheet" href="detaylar.css">
 </head>
 
 <body>
@@ -1808,7 +1447,7 @@
     </div>
   </div>
 
-  <div id="little" class="container" style="background-image: url('resim/little.jpg');">
+  <div id="little-nig" class="container" style="background-image: url('resim/little.jpg');">
     <div class="row">
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>LİTTLE NİGHTMARES</b></h1>
@@ -1895,7 +1534,7 @@
     </div>
   </div>
 
-  <div id="alien" class="container" style="background-image: url('resim/alien.jpg');">
+  <div id="alien_isolation" class="container" style="background-image: url('resim/alien.jpg');">
     <div class="row">
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>ALIEN:ISOLATİON</b></h1>
@@ -1981,7 +1620,7 @@
     </div>
   </div>
 
-  <div id="alien" class="container" style="background-image: url('resim/resident\ evil.jpg');">
+  <div id="resident_evil" class="container" style="background-image: url('resim/resident\ evil.jpg');">
     <div class="row">
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>RESIDENT EVIL VILLAGE</b></h1>
@@ -2240,9 +1879,569 @@
       </div>
     </div>
   </div>
+
+  <div id="asetto" class="container" style="background-image: url('resim/asetto.jpg');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>ASETTO CORSA</b></h1>
+        <p><span style="font-size:36px">İşte Asetto Corsa'nın Hikayesi</span>
+        Assetto Corsa, Kunos Simulazioni tarafından geliştirilen ve 2014 yılında ilk olarak piyasaya sürülen bir yarış simülasyon oyunudur. Oyun, gerçekçi sürüş dinamikleri, yüksek kaliteli grafikler ve bir dizi lisanslı araç içerir. Assetto Corsa, oyunculara birçok farklı pistte ve araçta yarışma deneyimi sunar.
+        Oyunun başarıları, gerçekçi fizik motoru, simülasyon odaklı sürüş deneyimi ve oyunculara geniş bir modifikasyon yeteneği sunma konularında yoğunlaşmıştır. Assetto Corsa, yarış oyunları topluluğu arasında popülerlik kazanmış ve simracing (simülasyon yarışı) topluluğunda bir standart haline gelmiştir.
+        Assetto Corsa'nın başarısı, yarış oyunları ve simülasyon tutkunları arasında geniş bir oyuncu kitlesine ulaşmasını sağlamış ve oyunun geliştirici ekibini daha sonra Assetto Corsa Competizione gibi projelerde çalışmaya yönlendirmiştir. 
+        Ancak, belirttiğim gibi, Assetto Corsa'nın bir hikayesi yoktur, çünkü genellikle bir hikaye odaklı oyun değil, daha çok simülasyon odaklı bir yarış oyunudur.</p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dirt" class="container" style="background-image: url('resim/dirt.jpg');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>DIRT REALLY 2.0</b></h1>
+        <p><span style="font-size:36px">İşte DIRT Really 2.0'nin Hikayesi</span>   
+        "Dirt Rally 2.0", Codemasters tarafından geliştirilen ve yayınlanan bir ralli yarışı simülasyon oyunudur. Ancak, oyunda klasik bir hikaye örgüsü yerine, oyunculara belirli bir hikaye sunulmaz. "Dirt Rally 2.0", gerçekçi bir ralli deneyimi sunmak için tasarlanmış bir simülasyon oyunudur ve daha çok yarış pistleri, araçlar ve yarış etkinlikleri üzerine odaklanır.
+        Oyunun temel özellikleri arasında çeşitli ralli pistleri, farklı zeminlerde yarışma imkanı, lisanslı ralli araçları ve gerçekçi sürüş dinamikleri yer almaktadır. Oyuncular, kariyer modunda kendi ralli pilotlarını oluşturabilir, yarışlara katılabilir ve araçlarını geliştirebilirler.
+        "Dirt Rally 2.0", oyunculara birçok farklı ralli etkinliği sunar ve oyuncuların becerilerini ölçmelerine olanak tanır. Ayrıca, oyunda hava koşulları ve araç ayarları gibi faktörlerin de gerçek bir ralli deneyimi sunacak şekilde modellenmiştir.
+        Bu tür simülasyon oyunları genellikle yarışa odaklanarak, oyuncuların gerçek bir yarışçı gibi hissetmelerini sağlamayı amaçlar ve genellikle kapsamlı bir hikayeye odaklanmaz. "Dirt Rally 2.0" da bu kapsamda değerlendirilebilecek bir oyundur.
+        </p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="formula" class="container" style="background-image: url('resim/f1.png');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>F1 2022</b></h1>
+        <p><span style="font-size:36px">İşte F1 2022'nin Hikayesi</span>
+        "F1" serisi, Formula 1 dünya şampiyonasını temel alan bir yarış oyunu serisidir. Bu oyun serisi, genellikle belirgin bir hikaye modu içermez. Bunun yerine, oyunculara gerçek Formula 1 takımları ve sürücülerle yarışma fırsatı sunar.
+        "F1" oyunları, genellikle gerçekçi bir yarış simülasyonu deneyimi sunmayı amaçlar ve oyunculara Formula 1 dünya şampiyonasının bir parçası olma şansı verir. Oyuncular, kariyer modu veya tek yarış modu gibi farklı oyun modlarında yarışabilir ve şampiyonluklar kazanabilirler.
+        Her yıl güncellenen oyunlar, gerçek takımların ve sürücülerin lisanslarını kullanarak gerçekçi bir yarış atmosferi oluşturur. Ayrıca, oyuncuların araçları geliştirmeleri, strateji belirlemeleri ve yarış sırasında gerçekçi hava koşulları ile başa çıkmaları gibi unsurları içerir.
+        Her ne kadar belirgin bir hikaye modu olmasa da, kariyer modu genellikle oyuncuların bir genç sürücü olarak başlayıp kariyerlerini geliştirmelerine olanak tanır. Oyuncular, yarış kazandıkça takımlarla anlaşmalar yapabilir, araçlarını geliştirebilir ve Formula 1 dünya şampiyonasında yükselebilirler.
+        F1 oyunları, genellikle yarışseverlere gerçek bir Formula 1 deneyimi sunmak ve oyuncuların favori takımları ve sürücüleriyle yarışmalarını sağlamak için tasarlanmıştır.  
+        </p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="forza" class="container" style="background-image: url('resim/forza.jpg');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>FORZA HORIZON</b></h1>
+        <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
+          "Forza Horizon" serisi, bir yarış simülasyonu olan "Forza Horizon 4" de dahil olmak üzere, genellikle gelişmiş bir hikaye moduna sahip değildir. "Forza Horizon" oyunları, oyunculara açık dünya bir ortamda serbestçe dolaşma ve yarışma imkanı sunar. Bu oyunlar genellikle yarışseverlere geniş bir araç yelpazesi, detaylı bir sürüş dinamikleri sistemi ve çeşitli yarış etkinlikleri sunar.
+          Oyunun ana odak noktası genellikle yarışlardır ve oyuncular, farklı türlerdeki yarış etkinliklerine katılarak ve farklı mevsimlerde farklı hava koşullarında yarışarak oyun dünyasını keşfederler.
+          Buna ek olarak, "Forza Horizon" serisi genellikle oyunculara kişiselleştirme seçenekleri sunar. Oyuncular araçlarını özelleştirebilir, yarışları kazandıkça ödüller kazanabilir ve kendi yarış ekibini oluşturabilirler.
+          Her "Forza Horizon" oyunu, farklı bir açık dünya haritasına ve yarış etkinliklerine sahiptir. Örneğin, "Forza Horizon 4", Büyük Britanya'nın farklı bölgelerini içeren geniş bir haritaya sahiptir ve mevsimlere göre değişen dinamik bir hava sistemi sunar.
+          Sonuç olarak, "Forza Horizon" serisi genellikle oyunculara geniş bir yarış deneyimi sunar ancak bu deneyim genellikle hikaye odaklı değildir. Oyuncular, kişisel hedeflere ulaşmak, ödüller kazanmak ve oyun dünyasını keşfetmek amacıyla yarışırlar.
+        </p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="gran" class="container" style="background-image: url('resim/gran.jpg');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>GRAN TRİSMO 7</b></h1>
+        <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
+        "Gran Turismo" serisi, Polyphony Digital tarafından geliştirilen bir yarış simülasyonu oyun serisidir. Seri, genellikle bir hikaye modu içermese de, oyunculara geniş bir yarış deneyimi sunar. "Gran Turismo" serisinin ana odak noktası, gerçekçi sürüş dinamikleri ve geniş bir araç yelpazesine dayanmaktadır.
+        Her bir "Gran Turismo" oyunu, geniş bir araç yelpazesi, detaylı yarış pistleri ve gerçek dünya yerlerini temel alan pistler içerir. Oyuncular, farklı yarış etkinliklerine katılarak kariyer modunda ilerler ve ödüller kazanır. Ancak, genellikle bir hikaye modu, karakterler veya belirgin bir kurgusal öykü bulunmaz.
+        Oyuncular genellikle lisans sınavları geçer, farklı sınıflardaki araçlara sahip olabilir, yarışlar kazanır ve kariyer modunda yükselirler. Oyun, sürüş becerilerini geliştirmeye odaklanır ve oyunculara gerçekçi bir yarış deneyimi sunma amacını taşır.
+        "Gran Turismo" serisi genellikle yüksek kaliteli grafiklere, gerçekçi fizik motorlarına ve detaylı araç modellemelerine odaklanır. Her bir oyun, yarış simülasyonları alanında kalitesiyle tanınan bir seri olarak bilinir.
+        Sonuç olarak, "Gran Turismo" serisi genellikle hikaye odaklı değil, daha çok gerçekçi yarış simülasyonu deneyimi sunmayı amaçlayan bir oyun serisidir.
+        </p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mario" class="container" style="background-image: url('resim/mario.jpg');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>MARIO KART DELUXE</b></h1>
+        <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
+          "Mario Kart" serisi, popüler "Super Mario" oyunlarından türetilen ve aksiyon dolu bir kart yarışı oyunu olan bir yarış oyun serisidir. "Mario Kart" oyunları, belirgin bir hikaye modu içermez, ancak genellikle karakterler, seviyeler ve yarışlar arasında geçen temel bir bağlantıya sahiptir.
+          Genel olarak, "Mario Kart" oyunlarında, Mario ve diğer popüler "Super Mario" karakterleri, renkli ve eğlenceli bir yarış dünyasında bir araya gelir. Oyuncular, kendilerine özgü güçlendirmelerle dolu yarış pistlerinde birbirleriyle rekabet ederler. Oyunlar genellikle "Mario Kart Grand Prix" adlı bir turnuva modu içerir, bu modda oyuncular farklı yarışlarda birbirleriyle yarışır ve puanlar kazanırlar.
+          Oyuncular aynı zamanda çeşitli öğeleri kullanarak rakiplerini engelleyebilir veya hızlarını artırabilirler. Oyunlarda çeşitli seviyeler, yarış pistleri ve araçlar bulunur. Oyuncular genellikle kendi favori karakterlerini ve araçlarını seçebilir, ayrıca oyun içi öğeleri toplayarak kendilerini güçlendirebilirler.
+          Her "Mario Kart" oyunu, kendi benzersiz özelliklere sahiptir ve genellikle popüler "Super Mario" evrenine ait sevimli ve tanıdık karakterleri içerir. Oyunlar genellikle eğlence, rekabet ve çok oyunculu modlar üzerine odaklanır.
+          Sonuç olarak, "Mario Kart" serisi genellikle hikaye odaklı bir oyun değildir, ancak eğlenceli, renkli ve rekabetçi bir kart yarışı deneyimi sunmayı amaçlar.
+        </p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="wreckfest" class="container" style="background-image: url('resim/wreckfest.jpg');">
+    <div class="row">
+      <div class="column-66">
+        <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>WRECKFEST</b></h1>
+        <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
+          "Wreckfest", Bugbear Entertainment tarafından geliştirilen ve THQ Nordic tarafından yayınlanan bir araba yarışı oyunudur. Oyun, gerçekçi fizik motoru, zarar modellemesi ve çekişmeli yarışlarıyla tanınır. Ancak, "Wreckfest" genellikle belirgin bir hikaye modu içermez. Bunun yerine, oyunculara çeşitli yarış etkinlikleri ve serbest dolaşma modları sunar.
+          Oyunda genellikle kariyer modu bulunur. Bu mod, oyunculara farklı yarışlara katılarak ve araçlarını geliştirerek ilerleme fırsatı tanır. Yarışlarda başarı elde ettikçe, oyuncular yeni araçlar satın alabilir, araçlarını özelleştirebilir ve daha zorlu yarışlara katılabilirler.
+          Oyundaki temel odak noktalarından biri, çekişmeli yarışlardır. Zarar modellemesi oldukça detaylıdır ve oyuncular araçlarını parçalayabilir, hasar alabilirler. Bu da oyunu daha gerçekçi ve heyecan verici kılar.
+          "Wreckfest" aynı zamanda çok oyunculu bir mod da içerir, böylece oyuncular dünya genelindeki diğer oyunculara karşı yarışabilirler. Oyun, hem rekabetçi hem de eğlenceli bir oyun deneyimi sunmayı hedefler.
+          Sonuç olarak, "Wreckfest" genellikle hikaye odaklı bir oyun değildir. Bunun yerine, oyunculara çeşitli yarışlar, serbest dolaşma modları ve detaylı araç özelleştirme seçenekleri sunan çekişmeli bir araba yarışı deneyimi sunar.
+        </p>
+          <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+          <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-    <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="#crysis" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
       <i class="fa fa-instagram w3-hover-opacity"></i>
