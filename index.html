@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css">
 </head>
 
@@ -21,45 +23,39 @@
   <!-- Navbar -->
   <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
-      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+        onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
       </a>
       <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;">HOME</a>
       <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
-          <div class="dropdown">
-            <button class=" w3-bar-item w3-button btn-secondary dropdown-toggle button-menu" style="border-radius: 30px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              FOR MORE
-            </button>
-            <ul class="dropdown-menu">
-              <li><button class="btn dropdown-item w3-bar-item w3-button" type="button">Action</button></li>
-            <li><button class="btn dropdown-item w3-bar-item w3-button" type="button">Another action</button></li>
-          <li><button class="btn dropdown-item w3-bar-item w3-button" type="button">Something else here</button></li>
-            </ul>
-          </div>
-      <button onclick="document.getElementById('id01').style.display='inline-block'" style="margin-top:auto; border-radius: 20px;"
+      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+          class="fa fa-th"></i>FOR MORE</a>
+      <button onclick="document.getElementById('id01').style.display='inline-block'"
+        style="margin-top:auto; border-radius: 20px;"
         class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
-        <button class="w3-bar-item w3-button w3-hide-small button-menu" style="margin-top: auto; border-radius: 30px;"
+      <button class="w3-bar-item w3-button w3-hide-small button-menu" style="margin-top: auto; border-radius: 30px;"
         onclick="toggleDarkMode()">CHANGE MODE</button>
 
-<script>
-  var isDarkMode = false;
+      <script>
+        var isDarkMode = false;
 
-  function toggleDarkMode() { 
-    var element = document.body;
-    isDarkMode = !isDarkMode;
+        function toggleDarkMode() {
+          var element = document.body;
+          isDarkMode = !isDarkMode;
 
-    if (isDarkMode) {
-      element.style.backgroundColor = "#202121";
-      element.style.color = "white";
+          if (isDarkMode) {
+            element.style.backgroundColor = "#202121";
+            element.style.color = "white";
 
-    } else {
-      element.style.backgroundColor = "white";
-      element.style.color = "black";
+          } else {
+            element.style.backgroundColor = "white";
+            element.style.color = "black";
 
-    }
-  }
-</script>
+          }
+        }
+      </script>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" style="border-radius: 180px;">
         <i class="fa fa-search"></i>
       </a>
@@ -88,7 +84,8 @@
           <div class="container" style="background-color:#ffffff">
             <button type="button" onclick="document.getElementById('id01').style.display='none'"
               class="cancelbtn button1" style="border-radius: 20px;">Cancel</button>
-            <span style="color: black;" class="psw">Forgot <a href="#" style="color: blue; text-decoration: none;">password?</a></span>
+            <span style="color: black;" class="psw">Forgot <a href="#"
+                style="color: blue; text-decoration: none;">password?</a></span>
           </div>
         </form>
       </div>
@@ -111,7 +108,8 @@
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
       <a href="hakkında.html" class="w3-bar-item w3-button button-smallmenu" style="border-radius: 30px;"
         onclick="toggleFunction()">ABOUT</a>
-      <a href="aksiyon.html" class="w3-bar-item w3-button button-smallmenu" style="border-radius: 30px;" onclick="toggleFunction()">FOR
+      <a href="aksiyon.html" class="w3-bar-item w3-button button-smallmenu" style="border-radius: 30px;"
+        onclick="toggleFunction()">FOR
         MORE</a>
       <button class="w3-bar-item w3-button button-smallmenu" style="margin-top: auto; border-radius: 30px;"
         onclick="toggleDarkMode()">CHANGE MODE</button>
@@ -136,11 +134,11 @@
   <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
     <div class="w3-display-middle" style="white-space:nowrap;">
       <a href="index.html" style="text-decoration: none;"><span
-          class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity" style="border-radius:20px;">WELCOME<span
-            class="w3-hide-small"> TO MY WEB SİTE</span></a>
+          class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"
+          style="border-radius:20px;">WELCOME<span class="w3-hide-small"> TO MY WEB SİTE</span></a>
     </div>
   </div>
-  
+
 
   <!-- Container (About Section) -->
   <div class="w3-content w3-container w3-padding-64" id="about">
@@ -276,13 +274,13 @@
   </div>
 
   <script>
-      function openForm() {
-          document.getElementById("myForm").style.display = "block";
-      }
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
 
-      function closeForm() {
-          document.getElementById("myForm").style.display = "none";
-      }
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
   </script>
 
   <!-- Third Parallax Image with Portfolio Text -->
@@ -374,20 +372,20 @@
     }
   </script>
 
-    <!--Chat-->
-    <button class="open-button" style="border-radius: 30px;" onclick="openForm()">Chat</button>
+  <!--Chat-->
+  <button class="open-button" style="border-radius: 30px;" onclick="openForm()">Chat</button>
 
-    <div class="chat-popup" id="myForm">
-        <form class="form-container">
-            <h1 style="color:white;">Chat</h1>
-  
-            <label for="msg" style="color: white;"><b>Message</b></label>
-            <textarea placeholder="Type message.." name="msg" required></textarea>
-  
-            <button type="submit" class="btn" style="border-radius: 30px;">Send</button>
-            <button type="button" class="btn cancel" style="border-radius: 30px;" onclick="closeForm()">Close</button>
-        </form>
-    </div>
+  <div class="chat-popup" id="myForm">
+    <form class="form-container">
+      <h1 style="color:white;">Chat</h1>
+
+      <label for="msg" style="color: white;"><b>Message</b></label>
+      <textarea placeholder="Type message.." name="msg" required></textarea>
+
+      <button type="submit" class="btn" style="border-radius: 30px;">Send</button>
+      <button type="button" class="btn cancel" style="border-radius: 30px;" onclick="closeForm()">Close</button>
+    </form>
+  </div>
 
 </body>
 
