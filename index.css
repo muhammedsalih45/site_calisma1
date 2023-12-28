@@ -322,7 +322,7 @@ body {
 }
 
 .dropdown {
-  display: inline-flex;
+  display: inline-block;
 }
 
 .dropdown-content {
@@ -346,5 +346,5 @@ body {
 }
 
 .dropdown:hover .dropdown-content {
-  display: inline-block;
+  display: block;
 }

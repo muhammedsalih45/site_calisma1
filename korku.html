@@ -10,28 +10,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="korku.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="korku.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
     <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
+        <div id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
-            <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
-                    class="fa fa-user"></i> ABOUT</a>
-            <a href="oyunlar.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
-                    class="fa fa-th"></i>FOR MORE</a>
-            <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
-                onclick="toggleDarkMode()">CHANGE
-                MODE</button>
-            <button onclick="document.getElementById('id01').style.display='inline-block'" style="margin-top:auto;"
+            <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;"><i
+                    class="fa fa-home"></i> HOME</a>
+            <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small button-menu"
+                style="border-radius: 30px;"><i class="fa fa-user"></i> ABOUT</a>
+            <div class="dropdown">
+                <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+                    FOR MORE
+                </button>
+                <div class="dropdown-content">
+                    <a class="w3-bar-item w3-button" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a>
+                    <a class="w3-bar-item w3-button" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a>
+                    <a class="w3-bar-item w3-button" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure
+                        Games</a>
+                    <a class="w3-bar-item w3-button" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a>
+                </div>
+            </div>
+            <button onclick="document.getElementById('id01').style.display='inline-block'"
+                style="margin-top:auto; border-radius: 20px;"
                 class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
+            <button class="w3-bar-item w3-button w3-hide-small button-menu"
+                style="margin-bottom:4px; border-radius: 30px;" onclick="toggleDarkMode()"><i class="fa fa-adjust"
+                    style="margin-right:2px;"></i>CHANGE MODE</button>
             <script>
                 var isDarkMode = false;
 
@@ -64,14 +78,17 @@
 
                     <div class="container">
                         <label for="uname"><b>Username</b></label>
-                        <input style="border-radius: 20px;" type="text" placeholder="Enter Username" name="uname" required>
+                        <input style="border-radius: 20px;" type="text" placeholder="Enter Username" name="uname"
+                            required>
 
                         <label for="psw"><b>Password</b></label>
-                        <input style="border-radius: 20px;" type="password" placeholder="Enter Password" name="psw" required>
+                        <input style="border-radius: 20px;" type="password" placeholder="Enter Password" name="psw"
+                            required>
 
                         <button style="border-radius: 20px;" class="button1" type="submit">Login</button>
                         <label>
-                            <input style="border-radius: 20px;" type="checkbox" checked="checked" name="remember"> Remember me
+                            <input style="border-radius: 20px;" type="checkbox" checked="checked" name="remember">
+                            Remember me
                         </label>
                     </div>
 
@@ -104,9 +121,19 @@
                 onclick="toggleFunction()">ABOUT</a>
             <a href="#portfolio" class="w3-bar-item w3-button" style="border-radius: 30px;"
                 onclick="toggleFunction()">GAMES</a>
-            <a href="aksiyon.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
-                onclick="toggleFunction()">FOR
-                MORE</a>
+            <div class="dropdown">
+                <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+                    FOR MORE
+                </button>
+                <div class="dropdown-content">
+                    <a class="w3-bar-item w3-button" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a>
+                    <a class="w3-bar-item w3-button" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a>
+                    <a class="w3-bar-item w3-button" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure
+                        Games</a>
+                    <a class="w3-bar-item w3-button" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a>
+                </div>
+            </div>
             <button class="w3-bar-item w3-button" style="margin-top: auto; border-radius: 30px;"
                 onclick="toggleDarkMode()">CHANGE MODE</button>
             <script>
@@ -196,9 +223,9 @@
             <div class="card">
                 <img src="resim/calisto.jpg" alt="Nature">
                 <div class="card-content">
-                <h3>Calisto Protocol</h3>
-                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
-                <a href="detaylar.html#calisto_protocol"><button class="button2">Detaylar</button></a>
+                    <h3>Calisto Protocol</h3>
+                    <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                    <a href="detaylar.html#calisto_protocol"><button class="button2">Detaylar</button></a>
                 </div>
             </div>
 
@@ -222,23 +249,23 @@
         </div>
     </div>
     <!--  -->
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="game-container">
             <div class="card">
                 <img src="resim/doom ethernal.jpg" alt="Nature">
                 <div class="card-content">
-                <h3>Doom Ethernal</h3>
-                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
-                <a href="detaylar.html#doom_ethernal"><button class="button2">Detaylar</button></a>
+                    <h3>Doom Ethernal</h3>
+                    <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                    <a href="detaylar.html#doom_ethernal"><button class="button2">Detaylar</button></a>
                 </div>
             </div>
 
             <div class="card">
                 <img src="resim/call of duty.jpg" alt="Nature">
                 <div class="card-content">
-                <h3>Call Of Duty MW</h3>
-                <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
-                <a href="detaylar.html#call_of_duty"><button class="button2">Detaylar</button></a>
+                    <h3>Call Of Duty MW</h3>
+                    <p>Doom 3'ten bu yana serideki ilk büyük yapıttır</p>
+                    <a href="detaylar.html#call_of_duty"><button class="button2">Detaylar</button></a>
                 </div>
             </div>
 
@@ -252,7 +279,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <!-- Modal for full size images on click-->
     <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
@@ -332,12 +359,12 @@
         <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the
             top</a>
         <div class="w3-xlarge w3-section">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
+            <i class="fa-brands fa-facebook w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-instagram w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-snapchat w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-pinterest w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-twitter w3-hover-opacity"></i>
+            <i class="fa-brands fa-linkedin w3-hover-opacity"></i>
         </div>
         <p>Powered by <b>Darkness Gaming</b></p>
     </footer>
@@ -356,7 +383,7 @@
         function myFunction() {
             var navbar = document.getElementById("myNavbar");
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+                navbar.className = " w3-card" + " w3-animate-top" + " w3-white";
             } else {
                 navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
             }

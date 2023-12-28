@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="aksiyon.css">
+    <link rel="stylesheet" href="aksiyon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
     <!-- Navbar -->
     <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
+        <div id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
@@ -25,31 +26,42 @@
             <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
             <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
                     class="fa fa-user"></i> ABOUT</a>
-            <a href="oyunlar.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
-                    class="fa fa-th"></i>FOR MORE</a>
+            <div class="dropdown">
+                <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"
+                    type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+                    FOR MORE
+                </button>
+                <div class="dropdown-content">
+                    <a class="w3-bar-item w3-button" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a>
+                    <a class="w3-bar-item w3-button" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a>
+                    <a class="w3-bar-item w3-button" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure
+                        Games</a>
+                    <a class="w3-bar-item w3-button" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a>
+                </div>
+            </div>
             <button onclick="document.getElementById('id01').style.display='inline-block'" style="margin-top:auto;"
                 class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
-                <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
+            <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
                 onclick="toggleDarkMode()">CHANGE MODE</button>
-        
-        <script>
-          var isDarkMode = false;
-        
-          function toggleDarkMode() {
-            var element = document.body;
-            isDarkMode = !isDarkMode;
-        
-            if (isDarkMode) {
-              element.style.backgroundColor = "#202121";
-              element.style.color = "white";
-        
-            } else {
-              element.style.backgroundColor = "white";
-              element.style.color = "black";
-        
-            }
-          }
-        </script>
+
+            <script>
+                var isDarkMode = false;
+
+                function toggleDarkMode() {
+                    var element = document.body;
+                    isDarkMode = !isDarkMode;
+
+                    if (isDarkMode) {
+                        element.style.backgroundColor = "#202121";
+                        element.style.color = "white";
+
+                    } else {
+                        element.style.backgroundColor = "white";
+                        element.style.color = "black";
+
+                    }
+                }
+            </script>
             <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
                 <i class="fa fa-search"></i>
             </a>
@@ -64,19 +76,23 @@
 
                     <div class="container">
                         <label for="uname"><b>Username</b></label>
-                        <input style="border-radius: 20px;" type="text" placeholder="Enter Username" name="uname" required>
+                        <input style="border-radius: 20px;" type="text" placeholder="Enter Username" name="uname"
+                            required>
 
                         <label for="psw"><b>Password</b></label>
-                        <input style="border-radius: 20px;" type="password" placeholder="Enter Password" name="psw" required>
+                        <input style="border-radius: 20px;" type="password" placeholder="Enter Password" name="psw"
+                            required>
 
                         <button style="border-radius: 20px;" class="button1" type="submit">Login</button>
                         <label>
-                            <input style="border-radius: 20px;" type="checkbox" checked="checked" name="remember"> Remember me
+                            <input style="border-radius: 20px;" type="checkbox" checked="checked" name="remember">
+                            Remember me
                         </label>
                     </div>
 
                     <div class="container" style="background-color:#ffffff">
-                        <button style="border-radius: 20px;" type="button" onclick="document.getElementById('id01').style.display='none'"
+                        <button style="border-radius: 20px;" type="button"
+                            onclick="document.getElementById('id01').style.display='none'"
                             class="cancelbtn button1">Cancel</button>
                         <span class="psw">Forgot <a href="#"
                                 style="color: blue; text-decoration: none;">password?</a></span>
@@ -210,9 +226,9 @@
                 <a href="detaylar.html#call_of_duty"><button class="button2">Detaylar</button></a>
             </div>
         </div>
-     </div>
-     <!--  -->
-     <div class="container-fluid game-container">
+    </div>
+    <!--  -->
+    <div class="container-fluid game-container">
         <div class="card">
             <img src="resim/elden ring.jpg" alt="Nature">
             <div class="card-content">
@@ -239,153 +255,152 @@
                 <a href="detaylar.html#rdr2"><button class="button2">Detaylar</button></a>
             </div>
         </div>
-     </div>
+    </div>
 
-        <!-- Modal for full size images on click-->
-        <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-            <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
-                    class="fa fa-remove"></i></span>
-            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-                <img id="img01" class="w3-image">
-                <p id="caption" class="w3-opacity w3-large"></p>
-            </div>
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
+                class="fa fa-remove"></i></span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption" class="w3-opacity w3-large"></p>
         </div>
+    </div>
 
-        <!-- Third Parallax Image with Portfolio Text -->
-        <div class="bgimg-3 w3-display-container w3-opacity-min">
-            <div class="w3-display-middle">
-                <span class="w3-xxlarge w3-text-white w3-wide">EXPERİENCE İT WİTH </span>
-            </div>
+    <!-- Third Parallax Image with Portfolio Text -->
+    <div class="bgimg-3 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">EXPERİENCE İT WİTH </span>
         </div>
+    </div>
 
-        <!-- Container-->
-        <div class="w3-content w3-container w3-padding-64" id="contact">
-            <h3 class="w3-center">WHERE I WORK</h3>
-            <p class="w3-center"><em>I'd love your feedback!</em></p>
+    <!-- Container-->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+        <h3 class="w3-center">WHERE I WORK</h3>
+        <p class="w3-center"><em>I'd love your feedback!</em></p>
 
-            <div class="w3-row w3-padding-32 w3-section">
-                <div class="w3-col m4 w3-container">
-                    <img src="resim/alien.jpg" style="border-radius: 50px;"
-                        class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500"
-                        height="333">
+        <div class="w3-row w3-padding-32 w3-section">
+            <div class="w3-col m4 w3-container">
+                <img src="resim/alien.jpg" style="border-radius: 50px;"
+                    class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500"
+                    height="333">
+            </div>
+            <div class="w3-col m8 w3-panel">
+                <div class="w3-large w3-margin-bottom">
+                    <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Manisa,
+                    TR<br>
+                    <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 90+ 551
+                    501
+                    15 51<br>
+                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+                    mail@gmail.com<br>
                 </div>
-                <div class="w3-col m8 w3-panel">
-                    <div class="w3-large w3-margin-bottom">
-                        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>Manisa,
-                        TR<br>
-                        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 90+ 551
-                        501
-                        15 51<br>
-                        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
-                        mail@gmail.com<br>
-                    </div>
-                    <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-                    <form>
-                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                            <div class="w3-half">
-                                <input style="border-radius: 30px;" class="w3-input w3-border" type="text"
-                                    placeholder="Name  Surname" required name="Name">
-                            </div>
-                            <div class="w3-half">
-                                <input style="border-radius: 30px;" class="w3-input w3-border" type="text"
-                                    placeholder="Email" required name="Email">
-                            </div>
+                <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+                <form>
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input style="border-radius: 30px;" class="w3-input w3-border" type="text"
+                                placeholder="Name  Surname" required name="Name">
                         </div>
-                        <input style="border-radius: 30px;" class="w3-input w3-border" type="text" placeholder="Message"
-                            required name="Message">
-                        <button class="w3-button w3-black w3-right w3-section button" type="submit">
-                            <i class="fa fa-paper-plane"></i> SEND MESSAGE</button>
-                    </form>
-                </div>
+                        <div class="w3-half">
+                            <input style="border-radius: 30px;" class="w3-input w3-border" type="text"
+                                placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input style="border-radius: 30px;" class="w3-input w3-border" type="text" placeholder="Message"
+                        required name="Message">
+                    <button class="w3-button w3-black w3-right w3-section button" type="submit">
+                        <i class="fa fa-paper-plane"></i> SEND MESSAGE</button>
+                </form>
             </div>
         </div>
+    </div>
 
-        <nav aria-label="Page navigation example" style="margin-right: 20px;">
-            <ul class="pagination justify-content-end">
-                <li class="page-item ">
-                    <a href="yarış.html" class="page-link">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="aksiyon.html">1</a></li>
-                <li class="page-item"><a class="page-link" href="macera.html">2</a></li>
-                <li class="page-item"><a class="page-link" href="korku.html">3</a></li>
-                <li class="page-item"><a class="page-link" href="yarış.html">4</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="macera.html">Next</a>
-                </li>
-            </ul>
-        </nav>
+    <nav aria-label="Page navigation example" style="margin-right: 20px;">
+        <ul class="pagination justify-content-end">
+            <li class="page-item ">
+                <a href="yarış.html" class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="aksiyon.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="macera.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="korku.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="yarış.html">4</a></li>
+            <li class="page-item">
+                <a class="page-link" href="macera.html">Next</a>
+            </li>
+        </ul>
+    </nav>
 
-        <!-- Footer -->
-        <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-            <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the
-                top</a>
-            <div class="w3-xlarge w3-section">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-                <i class="fa fa-instagram w3-hover-opacity"></i>
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-                <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div>
-            <p>Powered by <b>Darkness Gaming</b></p>
-        </footer>
-
-        <script>
-            // Modal Image Gallery
-            function onClick(element) {
-                document.getElementById("img01").src = element.src;
-                document.getElementById("modal01").style.display = "block";
-                var captionText = document.getElementById("caption");
-                captionText.innerHTML = element.alt;
-            }
-
-            // Change style of navbar on scroll
-            window.onscroll = function () { myFunction() };
-            function myFunction() {
-                var navbar = document.getElementById("myNavbar");
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-                } else {
-                    navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-                }
-            }
-
-            // Used to toggle the menu on small screens when clicking on the menu button
-            function toggleFunction() {
-                var x = document.getElementById("navDemo");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                }
-            }
-        </script>
-
-        <!-- Chat-->
-        <button class="open-button" style="border-radius: 30px;" onclick="openForm()">Chat</button>
-
-        <div class="chat-popup" id="myForm">
-            <form class="form-container">
-                <h1 style="color:white;">Chat</h1>
-
-                <label for="msg" style="color: white;"><b>Message</b></label>
-                <textarea placeholder="Type message.." name="msg" required></textarea>
-
-                <button type="submit" class="btn" style="border-radius: 30px;">Send</button>
-                <button type="button" class="btn cancel" style="border-radius: 30px;"
-                    onclick="closeForm()">Close</button>
-            </form>
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the
+            top</a>
+        <div class="w3-xlarge w3-section">
+            <i class="fa-brands fa-facebook w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-instagram w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-snapchat w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-pinterest w3-hover-opacity"></i>
+            <i class="fa-brands fa-square-twitter w3-hover-opacity"></i>
+            <i class="fa-brands fa-linkedin w3-hover-opacity"></i>
         </div>
+        <p>Powered by <b>Darkness Gaming</b></p>
+    </footer>
 
-        <script>
-            function openForm() {
-                document.getElementById("myForm").style.display = "block";
-            }
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
 
-            function closeForm() {
-                document.getElementById("myForm").style.display = "none";
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
             }
-        </script>
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+    <!-- Chat-->
+    <button class="open-button" style="border-radius: 30px;" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+        <form class="form-container">
+            <h1 style="color:white;">Chat</h1>
+
+            <label for="msg" style="color: white;"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn" style="border-radius: 30px;">Send</button>
+            <button type="button" class="btn cancel" style="border-radius: 30px;" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 
 </body>
 

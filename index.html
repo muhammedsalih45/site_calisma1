@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
@@ -27,27 +28,28 @@
         onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;">HOME</a>
+      <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;"><i
+          class="fa fa-home"></i> HOME</a>
       <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
       <div class="dropdown">
         <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;" type="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
+          data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
           FOR MORE
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="aksiyon.html">Action Game</a></li>
-          <li><a class="dropdown-item" href="korku.html">Fear Game</a></li>
-          <li><a class="dropdown-item" href="macera.html">Adventure Game</a></li>
-          <li><a class="dropdown-item" href="yarış.html">Race Game</a></li>
-        </ul>
+        <div class="dropdown-content">
+          <a class="w3-bar-item w3-button" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a>
+          <a class="w3-bar-item w3-button" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a>
+          <a class="w3-bar-item w3-button" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure Games</a>
+          <a class="w3-bar-item w3-button" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a>
+        </div>
       </div>
 
       <button onclick="document.getElementById('id01').style.display='inline-block'"
         style="margin-top:auto; border-radius: 20px;"
         class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
-      <button class="w3-bar-item w3-button w3-hide-small button-menu" style="margin-top: auto; border-radius: 30px;"
-        onclick="toggleDarkMode()">CHANGE MODE</button>
+      <button class="w3-bar-item w3-button w3-hide-small button-menu" style="margin-bottom:4px; border-radius: 30px;"
+        onclick="toggleDarkMode()"><i class="fa fa-adjust" style="margin-right:2px;"></i>CHANGE MODE</button>
 
       <script>
         var isDarkMode = false;
@@ -342,12 +344,12 @@
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <i class="fa-brands fa-facebook w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-instagram w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-snapchat w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-pinterest w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-twitter w3-hover-opacity"></i>
+      <i class="fa-brands fa-linkedin w3-hover-opacity"></i>
     </div>
     <p>Powered by <b>Darkness Gaming</b></p>
   </footer>

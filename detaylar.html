@@ -9,24 +9,40 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="detaylar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
   <!-- Navbar -->
   <div class="w3-top">
-    <div class="w3-bar" id="myNavbar">
+    <div id="myNavbar">
       <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
         onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
-      <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+      <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;"><i
+          class="fa fa-home"></i> HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
-      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
-          class="fa fa-th"></i>FOR MORE</a>
-      <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
-        onclick="toggleDarkMode()">CHANGE MODE</button>
+      <div class="dropdown">
+        <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+          FOR MORE
+        </button>
+        <div class="dropdown-content">
+          <a class="w3-bar-item w3-button" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a>
+          <a class="w3-bar-item w3-button" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a>
+          <a class="w3-bar-item w3-button" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure
+            Games</a>
+          <a class="w3-bar-item w3-button" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a>
+        </div>
+      </div>
+      <button onclick="document.getElementById('id01').style.display='inline-block'"
+        style="margin-top:auto; border-radius: 20px;"
+        class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
+      <button class="w3-bar-item w3-button w3-hide-small button-menu" style="margin-bottom:4px; border-radius: 30px;"
+        onclick="toggleDarkMode()"><i class="fa fa-adjust" style="margin-right:2px;"></i>CHANGE MODE</button>
 
       <script>
         var isDarkMode = false;
@@ -65,8 +81,18 @@
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
       <a href="hakkında.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
         onclick="toggleFunction()">ABOUT</a>
-      <a href="aksiyon.html" class="w3-bar-item w3-button" style="border-radius: 30px;" onclick="toggleFunction()">FOR
-        MORE</a>
+      <div class="dropdown">
+        <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+          FOR MORE
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a></li>
+          <li><a class="dropdown-item" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a></li>
+          <li><a class="dropdown-item" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure Games</a></li>
+          <li><a class="dropdown-item" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a></li>
+        </ul>
+      </div>
       <button class="w3-bar-item w3-button" style="margin-top: auto; border-radius: 30px;"
         onclick="toggleDarkMode()">CHANGE MODE</button>
       <script>
@@ -109,7 +135,7 @@
         <span class="fa fa-star"></span>
         <p>3.6 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -186,7 +212,7 @@
           Oyun, oyunculara geniş bir silah ve yetenek yelpazesi sunar ve taktiksel stratejiler kullanarak zorlu
           düşmanları alt etmelerini gerektirir. Doom Eternal, oynanışın yanı sıra çarpıcı bir atmosfer ve metal
           müzikleriyle de ünlüdür.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -194,7 +220,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -283,7 +309,7 @@
         <span class="fa fa-star"></span>
         <p>4.0 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -360,7 +386,7 @@
           çıkar. "Dead Space", klostrofobik
           atmosferi, gerilim dolu anları ve korkutucu düşmanlarıyla bilinen bir korku oyunu serisidir. Seri, bilim kurgu
           korku türündeki oyunları sevenler için eşsiz bir deneyim sunmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -368,7 +394,7 @@
         <span class="fa fa-star"></span>
         <p>4.1 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -443,7 +469,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -451,7 +477,7 @@
         <span class="fa fa-star"></span>
         <p>4.2 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -527,7 +553,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -535,7 +561,7 @@
         <span class="fa fa-star"></span>
         <p>4.4 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -610,7 +636,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -618,7 +644,7 @@
         <span class="fa fa-star"></span>
         <p>3.3 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -694,7 +720,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -702,7 +728,7 @@
         <span class="fa fa-star"></span>
         <p>4.6 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -777,7 +803,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -785,7 +811,7 @@
         <span class="fa fa-star checked"></span>
         <p>5.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -860,7 +886,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -868,7 +894,7 @@
         <span class="fa fa-star"></span>
         <p>3.8 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -943,7 +969,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -951,7 +977,7 @@
         <span class="fa fa-star"></span>
         <p>4.3 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1027,7 +1053,7 @@
           karakterlerin kişisel mücadeleleri, insanlığın kaderi ve uzaylı tehditlerle doludur. Crysis serisi, devam
           oyunları ve genişleme paketleriyle hikaye çizgisini genişletti ve geliştirdi. Seri, oyun dünyasında yüksek
           teknolojisi, etkileyici görselleri ve akıcı oynanışıyla tanınmaktadır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1035,7 +1061,7 @@
         <span class="fa fa-star"></span>
         <p>4.7 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1113,7 +1139,7 @@
           "The Witcher 3: Wild Hunt", açık dünya yapısı, etkileyici hikayesi, zengin yan görevleri ve derin karakter
           gelişimiyle övgü toplamış ve oyun dünyasında geniş bir hayran kitlesi kazanmıştır. Oyun, büyülü bir dünyada
           epik bir macera deneyimi sunar.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1121,7 +1147,7 @@
         <span class="fa fa-star checked"></span>
         <p>5.0 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1202,7 +1228,7 @@
           alan temalarıyla dikkat çeker. Oyun, oyunculara gelişmiş hackleme yetenekleri, heyecan verici aksiyon ve
           zengin bir açık dünya deneyimi sunar.
           Seri, oyun dünyasında geniş bir hayran kitlesi tarafından ilgiyle takip edilmektedir.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1210,7 +1236,7 @@
         <span class="fa fa-star"></span>
         <p>3.8 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1290,7 +1316,7 @@
           Marvel's Spider-Man, heyecan verici aksiyon sahneleri, etkileyici görselleri ve derinlemesine hikayesiyle oyun
           dünyasında büyük bir başarı elde etmiştir. Oyun, Spider-Man hayranları ve genel oyunseverler tarafından
           beğenilmiş ve takdir edilmiştir.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1298,7 +1324,7 @@
         <span class="fa fa-star"></span>
         <p>4.3 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1378,7 +1404,7 @@
           gelişimi ve hikaye ilerledikçe alınan kararlar, oyunun ilerleyen kısımlarını etkiler ve farklı sonuçlara yol
           açabilir.
           Oyun, inFAMOUS serisi hayranları ve aksiyon-macera oyunlarını sevenler için eğlenceli bir deneyim sunar.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1386,7 +1412,7 @@
         <span class="fa fa-star"></span>
         <p>4.8 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1465,7 +1491,7 @@
           gelişimi ve hikaye ilerledikçe alınan kararlar, oyunun ilerleyen kısımlarını etkiler ve farklı sonuçlara yol
           açabilir.
           Oyun, inFAMOUS serisi hayranları ve aksiyon-macera oyunlarını sevenler için eğlenceli bir deneyim sunar.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1473,7 +1499,7 @@
         <span class="fa fa-star checked"></span>
         <p>5.3 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1551,7 +1577,7 @@
           Oyuncuların karşılaştığı zorluklar ve gerilim dolu atmosfer, oyunun hayatta kalma temasını ve Alien
           evrenindeki korku unsurlarını başarıyla yansıtır. Alien: Isolation, Alien serisine olan sadık yaklaşımı ve
           atmosferik gerilimiyle oyun eleştirmenlerinden ve oyunculardan olumlu eleştiriler almıştır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1559,7 +1585,7 @@
         <span class="fa fa-star"></span>
         <p>3.9 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1636,7 +1662,7 @@
           gerilim dolu atmosferi ve sürükleyici hikayesi ile eleştirmenlerden ve oyunculardan olumlu eleştiriler
           almıştır. Oyun, Resident Evil serisinin hayranlarına ve genel korku oyunu hayranlarına keyifli ve unutulmaz
           bir deneyim sunar.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1644,7 +1670,7 @@
         <span class="fa fa-star"></span>
         <p>4.7 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1723,7 +1749,7 @@
           "Need for Speed Heat", geniş açık dünya haritası, özelleştirilebilir araçları ve hikaye odaklı oyun
           mekaniğiyle beğeni toplamıştır. Yüksek hızlı yarışlar, kişiselleştirme seçenekleri ve polis kovalamacaları
           gibi unsurlar, oyunun heyecan verici ve eğlenceli bir deneyim sunmasını sağlamıştır.</p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1731,7 +1757,7 @@
         <span class="fa fa-star checked"></span>
         <p>5.0 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1811,71 +1837,71 @@
           gerçek dünya ralli şampiyonasına olan sadık yaklaşımıyla ve yüksek kaliteli grafikleriyle dikkat çekmektedir.
           Oyuncular, farklı yarışlar ve zorluklarla dolu heyecan verici bir ralli deneyimi yaşamak için WRC 9'un sunduğu
           çeşitli içeriklerden yararlanabilirler.</p>
-          <span class="heading">User Rating</span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star "></span>
-          <p>4.5 average based on 254 reviews.</p>
-          <hr style="border:3px solid #f1f1f1">
-            <div class="row">
-            <div class="side">
-              <div>5 star</div>
-            </div>
-            <div class="middle">
-              <div class="bar-container">
-                <div class="bar-5"></div>
-              </div>
-            </div>
-            <div class="side right">
-              <div>150</div>
-            </div>
-            <div class="side">
-              <div>4 star</div>
-            </div>
-            <div class="middle">
-              <div class="bar-container">
-                <div class="bar-4"></div>
-              </div>
-            </div>
-            <div class="side right">
-              <div>63</div>
-            </div>
-            <div class="side">
-              <div>3 star</div>
-            </div>
-            <div class="middle">
-              <div class="bar-container">
-                <div class="bar-3"></div>
-              </div>
-            </div>
-            <div class="side right">
-              <div>15</div>
-            </div>
-            <div class="side">
-              <div>2 star</div>
-            </div>
-            <div class="middle">
-              <div class="bar-container">
-                <div class="bar-2"></div>
-              </div>
-            </div>
-            <div class="side right">
-              <div>6</div>
-            </div>
-            <div class="side">
-              <div>1 star</div>
-            </div>
-            <div class="middle">
-              <div class="bar-container">
-                <div class="bar-1"></div>
-              </div>
-            </div>
-            <div class="side right">
-              <div>20</div>
+        <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <p>4.5 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+        <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
             </div>
           </div>
+          <div class="side right">
+            <div>150</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>63</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>15</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>6</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>20</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1885,11 +1911,18 @@
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>ASETTO CORSA</b></h1>
         <p><span style="font-size:36px">İşte Asetto Corsa'nın Hikayesi</span>
-        Assetto Corsa, Kunos Simulazioni tarafından geliştirilen ve 2014 yılında ilk olarak piyasaya sürülen bir yarış simülasyon oyunudur. Oyun, gerçekçi sürüş dinamikleri, yüksek kaliteli grafikler ve bir dizi lisanslı araç içerir. Assetto Corsa, oyunculara birçok farklı pistte ve araçta yarışma deneyimi sunar.
-        Oyunun başarıları, gerçekçi fizik motoru, simülasyon odaklı sürüş deneyimi ve oyunculara geniş bir modifikasyon yeteneği sunma konularında yoğunlaşmıştır. Assetto Corsa, yarış oyunları topluluğu arasında popülerlik kazanmış ve simracing (simülasyon yarışı) topluluğunda bir standart haline gelmiştir.
-        Assetto Corsa'nın başarısı, yarış oyunları ve simülasyon tutkunları arasında geniş bir oyuncu kitlesine ulaşmasını sağlamış ve oyunun geliştirici ekibini daha sonra Assetto Corsa Competizione gibi projelerde çalışmaya yönlendirmiştir. 
-        Ancak, belirttiğim gibi, Assetto Corsa'nın bir hikayesi yoktur, çünkü genellikle bir hikaye odaklı oyun değil, daha çok simülasyon odaklı bir yarış oyunudur.</p>
-          <span class="heading">User Rating</span>
+          Assetto Corsa, Kunos Simulazioni tarafından geliştirilen ve 2014 yılında ilk olarak piyasaya sürülen bir yarış
+          simülasyon oyunudur. Oyun, gerçekçi sürüş dinamikleri, yüksek kaliteli grafikler ve bir dizi lisanslı araç
+          içerir. Assetto Corsa, oyunculara birçok farklı pistte ve araçta yarışma deneyimi sunar.
+          Oyunun başarıları, gerçekçi fizik motoru, simülasyon odaklı sürüş deneyimi ve oyunculara geniş bir
+          modifikasyon yeteneği sunma konularında yoğunlaşmıştır. Assetto Corsa, yarış oyunları topluluğu arasında
+          popülerlik kazanmış ve simracing (simülasyon yarışı) topluluğunda bir standart haline gelmiştir.
+          Assetto Corsa'nın başarısı, yarış oyunları ve simülasyon tutkunları arasında geniş bir oyuncu kitlesine
+          ulaşmasını sağlamış ve oyunun geliştirici ekibini daha sonra Assetto Corsa Competizione gibi projelerde
+          çalışmaya yönlendirmiştir.
+          Ancak, belirttiğim gibi, Assetto Corsa'nın bir hikayesi yoktur, çünkü genellikle bir hikaye odaklı oyun değil,
+          daha çok simülasyon odaklı bir yarış oyunudur.</p>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1897,7 +1930,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -1962,13 +1995,22 @@
     <div class="row">
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>DIRT REALLY 2.0</b></h1>
-        <p><span style="font-size:36px">İşte DIRT Really 2.0'nin Hikayesi</span>   
-        "Dirt Rally 2.0", Codemasters tarafından geliştirilen ve yayınlanan bir ralli yarışı simülasyon oyunudur. Ancak, oyunda klasik bir hikaye örgüsü yerine, oyunculara belirli bir hikaye sunulmaz. "Dirt Rally 2.0", gerçekçi bir ralli deneyimi sunmak için tasarlanmış bir simülasyon oyunudur ve daha çok yarış pistleri, araçlar ve yarış etkinlikleri üzerine odaklanır.
-        Oyunun temel özellikleri arasında çeşitli ralli pistleri, farklı zeminlerde yarışma imkanı, lisanslı ralli araçları ve gerçekçi sürüş dinamikleri yer almaktadır. Oyuncular, kariyer modunda kendi ralli pilotlarını oluşturabilir, yarışlara katılabilir ve araçlarını geliştirebilirler.
-        "Dirt Rally 2.0", oyunculara birçok farklı ralli etkinliği sunar ve oyuncuların becerilerini ölçmelerine olanak tanır. Ayrıca, oyunda hava koşulları ve araç ayarları gibi faktörlerin de gerçek bir ralli deneyimi sunacak şekilde modellenmiştir.
-        Bu tür simülasyon oyunları genellikle yarışa odaklanarak, oyuncuların gerçek bir yarışçı gibi hissetmelerini sağlamayı amaçlar ve genellikle kapsamlı bir hikayeye odaklanmaz. "Dirt Rally 2.0" da bu kapsamda değerlendirilebilecek bir oyundur.
+        <p><span style="font-size:36px">İşte DIRT Really 2.0'nin Hikayesi</span>
+          "Dirt Rally 2.0", Codemasters tarafından geliştirilen ve yayınlanan bir ralli yarışı simülasyon oyunudur.
+          Ancak, oyunda klasik bir hikaye örgüsü yerine, oyunculara belirli bir hikaye sunulmaz. "Dirt Rally 2.0",
+          gerçekçi bir ralli deneyimi sunmak için tasarlanmış bir simülasyon oyunudur ve daha çok yarış pistleri,
+          araçlar ve yarış etkinlikleri üzerine odaklanır.
+          Oyunun temel özellikleri arasında çeşitli ralli pistleri, farklı zeminlerde yarışma imkanı, lisanslı ralli
+          araçları ve gerçekçi sürüş dinamikleri yer almaktadır. Oyuncular, kariyer modunda kendi ralli pilotlarını
+          oluşturabilir, yarışlara katılabilir ve araçlarını geliştirebilirler.
+          "Dirt Rally 2.0", oyunculara birçok farklı ralli etkinliği sunar ve oyuncuların becerilerini ölçmelerine
+          olanak tanır. Ayrıca, oyunda hava koşulları ve araç ayarları gibi faktörlerin de gerçek bir ralli deneyimi
+          sunacak şekilde modellenmiştir.
+          Bu tür simülasyon oyunları genellikle yarışa odaklanarak, oyuncuların gerçek bir yarışçı gibi hissetmelerini
+          sağlamayı amaçlar ve genellikle kapsamlı bir hikayeye odaklanmaz. "Dirt Rally 2.0" da bu kapsamda
+          değerlendirilebilecek bir oyundur.
         </p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -1976,7 +2018,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -2042,13 +2084,22 @@
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>F1 2022</b></h1>
         <p><span style="font-size:36px">İşte F1 2022'nin Hikayesi</span>
-        "F1" serisi, Formula 1 dünya şampiyonasını temel alan bir yarış oyunu serisidir. Bu oyun serisi, genellikle belirgin bir hikaye modu içermez. Bunun yerine, oyunculara gerçek Formula 1 takımları ve sürücülerle yarışma fırsatı sunar.
-        "F1" oyunları, genellikle gerçekçi bir yarış simülasyonu deneyimi sunmayı amaçlar ve oyunculara Formula 1 dünya şampiyonasının bir parçası olma şansı verir. Oyuncular, kariyer modu veya tek yarış modu gibi farklı oyun modlarında yarışabilir ve şampiyonluklar kazanabilirler.
-        Her yıl güncellenen oyunlar, gerçek takımların ve sürücülerin lisanslarını kullanarak gerçekçi bir yarış atmosferi oluşturur. Ayrıca, oyuncuların araçları geliştirmeleri, strateji belirlemeleri ve yarış sırasında gerçekçi hava koşulları ile başa çıkmaları gibi unsurları içerir.
-        Her ne kadar belirgin bir hikaye modu olmasa da, kariyer modu genellikle oyuncuların bir genç sürücü olarak başlayıp kariyerlerini geliştirmelerine olanak tanır. Oyuncular, yarış kazandıkça takımlarla anlaşmalar yapabilir, araçlarını geliştirebilir ve Formula 1 dünya şampiyonasında yükselebilirler.
-        F1 oyunları, genellikle yarışseverlere gerçek bir Formula 1 deneyimi sunmak ve oyuncuların favori takımları ve sürücüleriyle yarışmalarını sağlamak için tasarlanmıştır.  
+          "F1" serisi, Formula 1 dünya şampiyonasını temel alan bir yarış oyunu serisidir. Bu oyun serisi, genellikle
+          belirgin bir hikaye modu içermez. Bunun yerine, oyunculara gerçek Formula 1 takımları ve sürücülerle yarışma
+          fırsatı sunar.
+          "F1" oyunları, genellikle gerçekçi bir yarış simülasyonu deneyimi sunmayı amaçlar ve oyunculara Formula 1
+          dünya şampiyonasının bir parçası olma şansı verir. Oyuncular, kariyer modu veya tek yarış modu gibi farklı
+          oyun modlarında yarışabilir ve şampiyonluklar kazanabilirler.
+          Her yıl güncellenen oyunlar, gerçek takımların ve sürücülerin lisanslarını kullanarak gerçekçi bir yarış
+          atmosferi oluşturur. Ayrıca, oyuncuların araçları geliştirmeleri, strateji belirlemeleri ve yarış sırasında
+          gerçekçi hava koşulları ile başa çıkmaları gibi unsurları içerir.
+          Her ne kadar belirgin bir hikaye modu olmasa da, kariyer modu genellikle oyuncuların bir genç sürücü olarak
+          başlayıp kariyerlerini geliştirmelerine olanak tanır. Oyuncular, yarış kazandıkça takımlarla anlaşmalar
+          yapabilir, araçlarını geliştirebilir ve Formula 1 dünya şampiyonasında yükselebilirler.
+          F1 oyunları, genellikle yarışseverlere gerçek bir Formula 1 deneyimi sunmak ve oyuncuların favori takımları ve
+          sürücüleriyle yarışmalarını sağlamak için tasarlanmıştır.
         </p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -2056,7 +2107,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -2122,13 +2173,22 @@
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>FORZA HORIZON</b></h1>
         <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
-          "Forza Horizon" serisi, bir yarış simülasyonu olan "Forza Horizon 4" de dahil olmak üzere, genellikle gelişmiş bir hikaye moduna sahip değildir. "Forza Horizon" oyunları, oyunculara açık dünya bir ortamda serbestçe dolaşma ve yarışma imkanı sunar. Bu oyunlar genellikle yarışseverlere geniş bir araç yelpazesi, detaylı bir sürüş dinamikleri sistemi ve çeşitli yarış etkinlikleri sunar.
-          Oyunun ana odak noktası genellikle yarışlardır ve oyuncular, farklı türlerdeki yarış etkinliklerine katılarak ve farklı mevsimlerde farklı hava koşullarında yarışarak oyun dünyasını keşfederler.
-          Buna ek olarak, "Forza Horizon" serisi genellikle oyunculara kişiselleştirme seçenekleri sunar. Oyuncular araçlarını özelleştirebilir, yarışları kazandıkça ödüller kazanabilir ve kendi yarış ekibini oluşturabilirler.
-          Her "Forza Horizon" oyunu, farklı bir açık dünya haritasına ve yarış etkinliklerine sahiptir. Örneğin, "Forza Horizon 4", Büyük Britanya'nın farklı bölgelerini içeren geniş bir haritaya sahiptir ve mevsimlere göre değişen dinamik bir hava sistemi sunar.
-          Sonuç olarak, "Forza Horizon" serisi genellikle oyunculara geniş bir yarış deneyimi sunar ancak bu deneyim genellikle hikaye odaklı değildir. Oyuncular, kişisel hedeflere ulaşmak, ödüller kazanmak ve oyun dünyasını keşfetmek amacıyla yarışırlar.
+          "Forza Horizon" serisi, bir yarış simülasyonu olan "Forza Horizon 4" de dahil olmak üzere, genellikle gelişmiş
+          bir hikaye moduna sahip değildir. "Forza Horizon" oyunları, oyunculara açık dünya bir ortamda serbestçe
+          dolaşma ve yarışma imkanı sunar. Bu oyunlar genellikle yarışseverlere geniş bir araç yelpazesi, detaylı bir
+          sürüş dinamikleri sistemi ve çeşitli yarış etkinlikleri sunar.
+          Oyunun ana odak noktası genellikle yarışlardır ve oyuncular, farklı türlerdeki yarış etkinliklerine katılarak
+          ve farklı mevsimlerde farklı hava koşullarında yarışarak oyun dünyasını keşfederler.
+          Buna ek olarak, "Forza Horizon" serisi genellikle oyunculara kişiselleştirme seçenekleri sunar. Oyuncular
+          araçlarını özelleştirebilir, yarışları kazandıkça ödüller kazanabilir ve kendi yarış ekibini oluşturabilirler.
+          Her "Forza Horizon" oyunu, farklı bir açık dünya haritasına ve yarış etkinliklerine sahiptir. Örneğin, "Forza
+          Horizon 4", Büyük Britanya'nın farklı bölgelerini içeren geniş bir haritaya sahiptir ve mevsimlere göre
+          değişen dinamik bir hava sistemi sunar.
+          Sonuç olarak, "Forza Horizon" serisi genellikle oyunculara geniş bir yarış deneyimi sunar ancak bu deneyim
+          genellikle hikaye odaklı değildir. Oyuncular, kişisel hedeflere ulaşmak, ödüller kazanmak ve oyun dünyasını
+          keşfetmek amacıyla yarışırlar.
         </p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -2136,7 +2196,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -2202,13 +2262,22 @@
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>GRAN TRİSMO 7</b></h1>
         <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
-        "Gran Turismo" serisi, Polyphony Digital tarafından geliştirilen bir yarış simülasyonu oyun serisidir. Seri, genellikle bir hikaye modu içermese de, oyunculara geniş bir yarış deneyimi sunar. "Gran Turismo" serisinin ana odak noktası, gerçekçi sürüş dinamikleri ve geniş bir araç yelpazesine dayanmaktadır.
-        Her bir "Gran Turismo" oyunu, geniş bir araç yelpazesi, detaylı yarış pistleri ve gerçek dünya yerlerini temel alan pistler içerir. Oyuncular, farklı yarış etkinliklerine katılarak kariyer modunda ilerler ve ödüller kazanır. Ancak, genellikle bir hikaye modu, karakterler veya belirgin bir kurgusal öykü bulunmaz.
-        Oyuncular genellikle lisans sınavları geçer, farklı sınıflardaki araçlara sahip olabilir, yarışlar kazanır ve kariyer modunda yükselirler. Oyun, sürüş becerilerini geliştirmeye odaklanır ve oyunculara gerçekçi bir yarış deneyimi sunma amacını taşır.
-        "Gran Turismo" serisi genellikle yüksek kaliteli grafiklere, gerçekçi fizik motorlarına ve detaylı araç modellemelerine odaklanır. Her bir oyun, yarış simülasyonları alanında kalitesiyle tanınan bir seri olarak bilinir.
-        Sonuç olarak, "Gran Turismo" serisi genellikle hikaye odaklı değil, daha çok gerçekçi yarış simülasyonu deneyimi sunmayı amaçlayan bir oyun serisidir.
+          "Gran Turismo" serisi, Polyphony Digital tarafından geliştirilen bir yarış simülasyonu oyun serisidir. Seri,
+          genellikle bir hikaye modu içermese de, oyunculara geniş bir yarış deneyimi sunar. "Gran Turismo" serisinin
+          ana odak noktası, gerçekçi sürüş dinamikleri ve geniş bir araç yelpazesine dayanmaktadır.
+          Her bir "Gran Turismo" oyunu, geniş bir araç yelpazesi, detaylı yarış pistleri ve gerçek dünya yerlerini temel
+          alan pistler içerir. Oyuncular, farklı yarış etkinliklerine katılarak kariyer modunda ilerler ve ödüller
+          kazanır. Ancak, genellikle bir hikaye modu, karakterler veya belirgin bir kurgusal öykü bulunmaz.
+          Oyuncular genellikle lisans sınavları geçer, farklı sınıflardaki araçlara sahip olabilir, yarışlar kazanır ve
+          kariyer modunda yükselirler. Oyun, sürüş becerilerini geliştirmeye odaklanır ve oyunculara gerçekçi bir yarış
+          deneyimi sunma amacını taşır.
+          "Gran Turismo" serisi genellikle yüksek kaliteli grafiklere, gerçekçi fizik motorlarına ve detaylı araç
+          modellemelerine odaklanır. Her bir oyun, yarış simülasyonları alanında kalitesiyle tanınan bir seri olarak
+          bilinir.
+          Sonuç olarak, "Gran Turismo" serisi genellikle hikaye odaklı değil, daha çok gerçekçi yarış simülasyonu
+          deneyimi sunmayı amaçlayan bir oyun serisidir.
         </p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -2216,7 +2285,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -2282,13 +2351,23 @@
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>MARIO KART DELUXE</b></h1>
         <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
-          "Mario Kart" serisi, popüler "Super Mario" oyunlarından türetilen ve aksiyon dolu bir kart yarışı oyunu olan bir yarış oyun serisidir. "Mario Kart" oyunları, belirgin bir hikaye modu içermez, ancak genellikle karakterler, seviyeler ve yarışlar arasında geçen temel bir bağlantıya sahiptir.
-          Genel olarak, "Mario Kart" oyunlarında, Mario ve diğer popüler "Super Mario" karakterleri, renkli ve eğlenceli bir yarış dünyasında bir araya gelir. Oyuncular, kendilerine özgü güçlendirmelerle dolu yarış pistlerinde birbirleriyle rekabet ederler. Oyunlar genellikle "Mario Kart Grand Prix" adlı bir turnuva modu içerir, bu modda oyuncular farklı yarışlarda birbirleriyle yarışır ve puanlar kazanırlar.
-          Oyuncular aynı zamanda çeşitli öğeleri kullanarak rakiplerini engelleyebilir veya hızlarını artırabilirler. Oyunlarda çeşitli seviyeler, yarış pistleri ve araçlar bulunur. Oyuncular genellikle kendi favori karakterlerini ve araçlarını seçebilir, ayrıca oyun içi öğeleri toplayarak kendilerini güçlendirebilirler.
-          Her "Mario Kart" oyunu, kendi benzersiz özelliklere sahiptir ve genellikle popüler "Super Mario" evrenine ait sevimli ve tanıdık karakterleri içerir. Oyunlar genellikle eğlence, rekabet ve çok oyunculu modlar üzerine odaklanır.
-          Sonuç olarak, "Mario Kart" serisi genellikle hikaye odaklı bir oyun değildir, ancak eğlenceli, renkli ve rekabetçi bir kart yarışı deneyimi sunmayı amaçlar.
+          "Mario Kart" serisi, popüler "Super Mario" oyunlarından türetilen ve aksiyon dolu bir kart yarışı oyunu olan
+          bir yarış oyun serisidir. "Mario Kart" oyunları, belirgin bir hikaye modu içermez, ancak genellikle
+          karakterler, seviyeler ve yarışlar arasında geçen temel bir bağlantıya sahiptir.
+          Genel olarak, "Mario Kart" oyunlarında, Mario ve diğer popüler "Super Mario" karakterleri, renkli ve eğlenceli
+          bir yarış dünyasında bir araya gelir. Oyuncular, kendilerine özgü güçlendirmelerle dolu yarış pistlerinde
+          birbirleriyle rekabet ederler. Oyunlar genellikle "Mario Kart Grand Prix" adlı bir turnuva modu içerir, bu
+          modda oyuncular farklı yarışlarda birbirleriyle yarışır ve puanlar kazanırlar.
+          Oyuncular aynı zamanda çeşitli öğeleri kullanarak rakiplerini engelleyebilir veya hızlarını artırabilirler.
+          Oyunlarda çeşitli seviyeler, yarış pistleri ve araçlar bulunur. Oyuncular genellikle kendi favori
+          karakterlerini ve araçlarını seçebilir, ayrıca oyun içi öğeleri toplayarak kendilerini güçlendirebilirler.
+          Her "Mario Kart" oyunu, kendi benzersiz özelliklere sahiptir ve genellikle popüler "Super Mario" evrenine ait
+          sevimli ve tanıdık karakterleri içerir. Oyunlar genellikle eğlence, rekabet ve çok oyunculu modlar üzerine
+          odaklanır.
+          Sonuç olarak, "Mario Kart" serisi genellikle hikaye odaklı bir oyun değildir, ancak eğlenceli, renkli ve
+          rekabetçi bir kart yarışı deneyimi sunmayı amaçlar.
         </p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -2296,7 +2375,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -2362,13 +2441,22 @@
       <div class="column-66">
         <h1 class="xlarge-font" style="color:rgb(32, 117, 70);"><b>WRECKFEST</b></h1>
         <p><span style="font-size:36px">İşte Doom Ethernal'ın Hikayesi</span>
-          "Wreckfest", Bugbear Entertainment tarafından geliştirilen ve THQ Nordic tarafından yayınlanan bir araba yarışı oyunudur. Oyun, gerçekçi fizik motoru, zarar modellemesi ve çekişmeli yarışlarıyla tanınır. Ancak, "Wreckfest" genellikle belirgin bir hikaye modu içermez. Bunun yerine, oyunculara çeşitli yarış etkinlikleri ve serbest dolaşma modları sunar.
-          Oyunda genellikle kariyer modu bulunur. Bu mod, oyunculara farklı yarışlara katılarak ve araçlarını geliştirerek ilerleme fırsatı tanır. Yarışlarda başarı elde ettikçe, oyuncular yeni araçlar satın alabilir, araçlarını özelleştirebilir ve daha zorlu yarışlara katılabilirler.
-          Oyundaki temel odak noktalarından biri, çekişmeli yarışlardır. Zarar modellemesi oldukça detaylıdır ve oyuncular araçlarını parçalayabilir, hasar alabilirler. Bu da oyunu daha gerçekçi ve heyecan verici kılar.
-          "Wreckfest" aynı zamanda çok oyunculu bir mod da içerir, böylece oyuncular dünya genelindeki diğer oyunculara karşı yarışabilirler. Oyun, hem rekabetçi hem de eğlenceli bir oyun deneyimi sunmayı hedefler.
-          Sonuç olarak, "Wreckfest" genellikle hikaye odaklı bir oyun değildir. Bunun yerine, oyunculara çeşitli yarışlar, serbest dolaşma modları ve detaylı araç özelleştirme seçenekleri sunan çekişmeli bir araba yarışı deneyimi sunar.
+          "Wreckfest", Bugbear Entertainment tarafından geliştirilen ve THQ Nordic tarafından yayınlanan bir araba
+          yarışı oyunudur. Oyun, gerçekçi fizik motoru, zarar modellemesi ve çekişmeli yarışlarıyla tanınır. Ancak,
+          "Wreckfest" genellikle belirgin bir hikaye modu içermez. Bunun yerine, oyunculara çeşitli yarış etkinlikleri
+          ve serbest dolaşma modları sunar.
+          Oyunda genellikle kariyer modu bulunur. Bu mod, oyunculara farklı yarışlara katılarak ve araçlarını
+          geliştirerek ilerleme fırsatı tanır. Yarışlarda başarı elde ettikçe, oyuncular yeni araçlar satın alabilir,
+          araçlarını özelleştirebilir ve daha zorlu yarışlara katılabilirler.
+          Oyundaki temel odak noktalarından biri, çekişmeli yarışlardır. Zarar modellemesi oldukça detaylıdır ve
+          oyuncular araçlarını parçalayabilir, hasar alabilirler. Bu da oyunu daha gerçekçi ve heyecan verici kılar.
+          "Wreckfest" aynı zamanda çok oyunculu bir mod da içerir, böylece oyuncular dünya genelindeki diğer oyunculara
+          karşı yarışabilirler. Oyun, hem rekabetçi hem de eğlenceli bir oyun deneyimi sunmayı hedefler.
+          Sonuç olarak, "Wreckfest" genellikle hikaye odaklı bir oyun değildir. Bunun yerine, oyunculara çeşitli
+          yarışlar, serbest dolaşma modları ve detaylı araç özelleştirme seçenekleri sunan çekişmeli bir araba yarışı
+          deneyimi sunar.
         </p>
-          <span class="heading">User Rating</span>
+        <span class="heading">User Rating</span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -2376,7 +2464,7 @@
         <span class="fa fa-star"></span>
         <p>4.5 average based on 254 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
-          <div class="row">
+        <div class="row">
           <div class="side">
             <div>5 star</div>
           </div>
@@ -2441,14 +2529,14 @@
 
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-    <a href="#crysis" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <i class="fa-brands fa-facebook w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-instagram w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-snapchat w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-pinterest w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-twitter w3-hover-opacity"></i>
+      <i class="fa-brands fa-linkedin w3-hover-opacity"></i>
     </div>
     <p>Powered by <b>Darkness Gaming</b></p>
   </footer>
@@ -2467,7 +2555,7 @@
     function myFunction() {
       var navbar = document.getElementById("myNavbar");
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        navbar.className = " w3-card" + " w3-animate-top" + " w3-white";
       } else {
         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
       }

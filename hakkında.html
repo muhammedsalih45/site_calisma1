@@ -9,43 +9,60 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="hakkında.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
   <!-- Navbar -->
   <div class="w3-top">
-    <div class="w3-bar" id="myNavbar">
-      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+    <div id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+        onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="index.html" class="w3-bar-item w3-button" style="border-radius: 30px;">HOME</a>
-      <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
+      <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;"><i
+          class="fa fa-home"></i> HOME</a>
+      <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
-      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
-          class="fa fa-th"></i>FOR MORE</a>
-        <button class="w3-bar-item w3-button w3-hide-small" style="margin-top: auto; border-radius: 30px;"
-        onclick="toggleDarkMode()">CHANGE MODE</button>
+      <div class="dropdown">
+        <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+          FOR MORE
+        </button>
+        <div class="dropdown-content">
+          <a class="w3-bar-item w3-button" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a>
+          <a class="w3-bar-item w3-button" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a>
+          <a class="w3-bar-item w3-button" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure Games</a>
+          <a class="w3-bar-item w3-button" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a>
+        </div>
+      </div>
 
-<script>
-  var isDarkMode = false;
+      <button onclick="document.getElementById('id01').style.display='inline-block'"
+        style="margin-top:auto; border-radius: 20px;"
+        class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
+      <button class="w3-bar-item w3-button w3-hide-small button-menu" style="margin-bottom:4px; border-radius: 30px;"
+        onclick="toggleDarkMode()"><i class="fa fa-adjust" style="margin-right:2px;"></i>CHANGE MODE</button>
 
-  function toggleDarkMode() {
-    var element = document.body;
-    isDarkMode = !isDarkMode;
+      <script>
+        var isDarkMode = false;
 
-    if (isDarkMode) {
-      element.style.backgroundColor = "#202121";
-      element.style.color = "white";
+        function toggleDarkMode() {
+          var element = document.body;
+          isDarkMode = !isDarkMode;
 
-    } else {
-      element.style.backgroundColor = "white";
-      element.style.color = "black";
+          if (isDarkMode) {
+            element.style.backgroundColor = "#202121";
+            element.style.color = "white";
 
-    }
-  }
-  
-</script>
+          } else {
+            element.style.backgroundColor = "white";
+            element.style.color = "black";
+
+          }
+        }
+
+      </script>
       <script>
         // Get the modal
         var modal = document.getElementById('id01');
@@ -63,8 +80,18 @@
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
       <a href="hakkında.html" class="w3-bar-item w3-button" style="border-radius: 30px;"
         onclick="toggleFunction()">ABOUT</a>
-      <a href="aksiyon.html" class="w3-bar-item w3-button" style="border-radius: 30px;" onclick="toggleFunction()">FOR
-        MORE</a>
+      <div class="dropdown">
+        <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-th"></i>
+          FOR MORE
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="aksiyon.html"><i class="fa-solid fa-gun"></i>Action Games</a></li>
+          <li><a class="dropdown-item" href="korku.html"><i class="fa-solid fa-ghost"></i>Fear Games</a></li>
+          <li><a class="dropdown-item" href="macera.html"><i class="fa-solid fa-hat-cowboy"></i>Adventure Games</a></li>
+          <li><a class="dropdown-item" href="yarış.html"><i class="fa-solid fa-car"></i>Race Games</a></li>
+        </ul>
+      </div>
       <button class="w3-bar-item w3-button" style="margin-top: auto; border-radius: 30px;"
         onclick="toggleDarkMode()">CHANGE MODE</button>
       <script>
@@ -84,8 +111,8 @@
     </div>
   </div>
 
-   <!-- The App Section -->
-   <div class="container" style="background-color: #b9b9b9;">
+  <!-- The App Section -->
+  <div class="container" style="background-color: #b9b9b9;">
     <div class="row">
       <div class="column-66">
         <h1 class="xlarge-font"><b>VİSİON</b></h1>
@@ -104,25 +131,25 @@
   </div>
 
 
- <!-- Clarity Section -->
- <div class="container" style="background-color:#7e7e7e">
-  <div class="row">
-    <div class="column-33">
-      <img src="resim/dead space.jpg" alt="App" width="600" height="600" style="border-radius:40px;">
-    </div>
-    <div class="column-66">
-      <h1 class="xlarge-font"><b>Mission</b></h1>
-      <h1 class="large-font" style="color:mediumseagreen;"><b>So What İs Our Mission?</b></h1>
-      <p><span style="font-size:16px">"Our mission is to create a paradise for gamers of all types exploring the world
-          of gaming. This paradise aims to provide gamers with a wide choice, bringing together both the latest games
-          and unforgettable classics. Games are the melting pot for gamers with many different interests and play
-          styles. We strive to satisfy gamers of all kinds and deliver the best games available to meet their demands.
-      </p>
+  <!-- Clarity Section -->
+  <div class="container" style="background-color:#7e7e7e">
+    <div class="row">
+      <div class="column-33">
+        <img src="resim/dead space.jpg" alt="App" width="600" height="600" style="border-radius:40px;">
+      </div>
+      <div class="column-66">
+        <h1 class="xlarge-font"><b>Mission</b></h1>
+        <h1 class="large-font" style="color:mediumseagreen;"><b>So What İs Our Mission?</b></h1>
+        <p><span style="font-size:16px">"Our mission is to create a paradise for gamers of all types exploring the world
+            of gaming. This paradise aims to provide gamers with a wide choice, bringing together both the latest games
+            and unforgettable classics. Games are the melting pot for gamers with many different interests and play
+            styles. We strive to satisfy gamers of all kinds and deliver the best games available to meet their demands.
+        </p>
+      </div>
     </div>
   </div>
-</div>
 
-      <!-- The App Section -->
+  <!-- The App Section -->
   <div class="container" style="background-color: #525252;">
     <div class="row">
       <div class="column-66">
@@ -140,37 +167,37 @@
     </div>
   </div>
 
-    <!-- Clarity Section -->
-    <div class="container" style="background-color:#3c3c3c">
-      <div class="row">
-        <div class="column-33">
-          <img src="resim/elden ring.jpg" alt="App" width="600" height="600" style="border-radius:40px;">
-        </div>
-        <div class="column-66">
-          <h1 class="xlarge-font"><b>Worth</b></h1>
-          <h1 class="large-font" style="color:mediumseagreen;"><b>Our Values</b></h1>
-          <p><span style="font-size:24px">equally to everyone</span> Fair Game: Cheating and injustice are things that
-            have no place in the game world. We work to ensure that every player has a fair competitive environment and
-            equal opportunities.
-            Community Focus: Games serve as a way to connect with friends, meet new people, and build communities. We aim
-            to promote solidarity and friendship among players.
-            Supporting Creativity: We are committed to supporting creativity by providing game developers with the
-            opportunity to showcase their games. We are constantly filling the game world with innovation and discovery.
-          </p>
-        </div>
+  <!-- Clarity Section -->
+  <div class="container" style="background-color:#3c3c3c">
+    <div class="row">
+      <div class="column-33">
+        <img src="resim/elden ring.jpg" alt="App" width="600" height="600" style="border-radius:40px;">
+      </div>
+      <div class="column-66">
+        <h1 class="xlarge-font"><b>Worth</b></h1>
+        <h1 class="large-font" style="color:mediumseagreen;"><b>Our Values</b></h1>
+        <p><span style="font-size:24px">equally to everyone</span> Fair Game: Cheating and injustice are things that
+          have no place in the game world. We work to ensure that every player has a fair competitive environment and
+          equal opportunities.
+          Community Focus: Games serve as a way to connect with friends, meet new people, and build communities. We aim
+          to promote solidarity and friendship among players.
+          Supporting Creativity: We are committed to supporting creativity by providing game developers with the
+          opportunity to showcase their games. We are constantly filling the game world with innovation and discovery.
+        </p>
       </div>
     </div>
+  </div>
 
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey button"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <i class="fa-brands fa-facebook w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-instagram w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-snapchat w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-pinterest w3-hover-opacity"></i>
+      <i class="fa-brands fa-square-twitter w3-hover-opacity"></i>
+      <i class="fa-brands fa-linkedin w3-hover-opacity"></i>
     </div>
     <p>Powered by <b>Darkness Gaming</b></p>
   </footer>
@@ -189,7 +216,7 @@
     function myFunction() {
       var navbar = document.getElementById("myNavbar");
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        navbar.className = " w3-card" + " w3-animate-top" + " w3-white";
       } else {
         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
       }
