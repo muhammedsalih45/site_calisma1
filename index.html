@@ -22,7 +22,7 @@
 <body>
   <!-- Navbar -->
   <div class="w3-top">
-    <div class="w3-bar" id="myNavbar">
+    <div id="myNavbar">
       <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
         onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
@@ -30,8 +30,19 @@
       <a href="index.html" class="w3-bar-item w3-button button-menu" style="border-radius: 30px;">HOME</a>
       <a href="hakkında.html" class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;"><i
           class="fa fa-user"></i> ABOUT</a>
-      <a href="aksiyon.html" class="w3-bar-item w3-button w3-hide-small" style="border-radius: 30px;"><i
-          class="fa fa-th"></i>FOR MORE</a>
+      <div class="dropdown">
+        <button class="w3-bar-item w3-button w3-hide-small button-menu" style="border-radius: 30px;" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          FOR MORE
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="aksiyon.html">Action Game</a></li>
+          <li><a class="dropdown-item" href="korku.html">Fear Game</a></li>
+          <li><a class="dropdown-item" href="macera.html">Adventure Game</a></li>
+          <li><a class="dropdown-item" href="yarış.html">Race Game</a></li>
+        </ul>
+      </div>
+
       <button onclick="document.getElementById('id01').style.display='inline-block'"
         style="margin-top:auto; border-radius: 20px;"
         class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">Login</button>
@@ -355,7 +366,7 @@
     function myFunction() {
       var navbar = document.getElementById("myNavbar");
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        navbar.className = " w3-card" + " w3-animate-top" + " w3-white";
       } else {
         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
       }
